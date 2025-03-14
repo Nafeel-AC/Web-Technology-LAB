@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support | Collab Code Editor</title>
+    <link rel="stylesheet" href="support.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Collab Code</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Resources</a>
+                    <div class="dropdown-content">
+                        <a href="docs.html">Documentation</a>
+                        <a href="tutorials.html">Tutorials</a>
+                        <a href="api.html">API</a>
+                    </div>
+                </li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="support.html" class="active">Support</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="hero">
+        <h1>Support & Help Center</h1>
+        <p>Get help with your collaborative coding experience</p>
+    </div>
+    
+    <section class="support-options">
+        <div class="support-card">
+            <i class="fas fa-book"></i>
+            <h3>Documentation</h3>
+            <p>Browse our comprehensive guides</p>
+        </div>
+        <div class="support-card">
+            <i class="fas fa-video"></i>
+            <h3>Video Tutorials</h3>
+            <p>Learn through step-by-step videos</p>
+        </div>
+        <div class="support-card">
+            <i class="fas fa-comments"></i>
+            <h3>Community Forum</h3>
+            <p>Connect with other developers</p>
+        </div>
+    </section>
+    
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>How do I create a new collaborative session?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Click on "New Session" in the dashboard and share the generated link with your team members. Each session has a unique ID that allows your team to join and collaborate in real-time.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Why is my code not updating in real-time?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Ensure you have a stable internet connection and that WebSockets are not blocked by your network. Try refreshing the page or checking if your browser supports WebSockets.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>How does cursor tracking work with multiple users?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Our collaborative editor uses color-coded cursors to identify different users. Each user gets assigned a unique color, and user names appear next to their cursors for easy identification.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Which programming languages are supported?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>We support JavaScript, Python, Java, C++, Ruby, PHP, Go, TypeScript, C#, Swift, Kotlin, and Rust. Each language includes syntax highlighting and auto-completion.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact">
+        <h2>Contact Support</h2>
+        <div class="contact-methods">
+            <div class="contact-method">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p><a href="mailto:support@collabcode.com">support@collabcode.com</a></p>
+            </div>
+            <div class="contact-method">
+                <i class="fas fa-phone"></i>
+                <h3>Phone</h3>
+                <p><a href="tel:+12345678900">+1 234 567 8900</a></p>
+            </div>
+            <div class="contact-method">
+                <i class="fas fa-comment"></i>
+                <h3>Live Chat</h3>
+                <p>Available on dashboard</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-section">
+            <h3>Product</h3>
+            <ul>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Roadmap</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Resources</h3>
+            <ul>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">API Reference</a></li>
+                <li><a href="#">Community</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <p>&copy; 2025 Collab Code Editor</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    this.parentElement.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
