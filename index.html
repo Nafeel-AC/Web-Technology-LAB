@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCollab</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e1e;
+            color: white;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #2d2d2d;
+        }
+        .logo {
+            font-size: 1.5em;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+        .get-started {
+            background-color: #6a0dad;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #111;
+        }
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+            background-color: #222;
+        }
+        .feature-card {
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            width: 30%;
+            text-align: center;
+        }
+        .testimonials {
+            text-align: center;
+            padding: 40px;
+            background-color: #181818;
+        }
+        .testimonial {
+            background: #282828;
+            margin: 10px auto;
+            padding: 20px;
+            width: 50%;
+            border-radius: 10px;
+        }
+        footer {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #2d2d2d;
+        }
+        .footer-section ul {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">CodeCollab</div>
+        <nav>
+            <ul>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </nav>
+        <button class="get-started">Get Started</button>
+    </header>
+    
+    <section class="hero">
+        <h1>Collaborate on Code Like Never Before</h1>
+        <p>Join thousands of developers in a seamless collaborative coding environment.</p>
+        <img src="coding_collaboration.png" alt="Collaboration Illustration">
+    </section>
+    
+    <section class="features">
+        <div class="feature-card">
+            <h3>Real-time Collaboration</h3>
+            <p>Experience seamless, real-time coding with your team.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Easy Integration</h3>
+            <p>Integrate with your favorite tools and services effortlessly.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Secure Environment</h3>
+            <p>Your code and data are safe with our top-notch security measures.</p>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial">
+            <p>"CodeCollab has transformed the way our team works. It's a game-changer!"</p>
+            <span>- Alex Johnson</span>
+        </div>
+        <div class="testimonial">
+            <p>"The integration capabilities are fantastic. Highly recommend!"</p>
+            <span>- Jamie Lee</span>
+        </div>
+        <div class="testimonial">
+            <p>"The real-time collaboration feature is simply amazing!"</p>
+            <span>- Sam Neil</span>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-section">
+            <h3>Company</h3>
+            <ul>
+                <li>About Us</li>
+                <li>Blog</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Resources</h3>
+            <ul>
+                <li>Documentation</li>
+                <li>API Reference</li>
+                <li>Community Forum</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <ul>
+                <li>Twitter</li>
+                <li>Facebook</li>
+                <li>LinkedIn</li>
+            </ul>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
