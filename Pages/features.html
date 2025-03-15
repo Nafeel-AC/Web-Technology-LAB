@@ -4,89 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collaborative Code Editor - Essential Features</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../Css Files/features.css">
 </head>
 <body>
-    <header>
-        <h1>Collaborative Code Editor</h1>
-        <p>Seamless Real-time Collaboration for Developers</p>
-        <button id="themeToggle" class="theme-toggle">🌙</button>
+    <header class="bg-primary text-white text-center py-3">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">Collaborative Code Editor</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <button id="themeToggle" class="btn btn-light ml-3">🌙</button>
+            </div>
+        </nav>
     </header>
 
-    <div class="container">
-        <div class="intro">
+    <div class="container mt-4">
+        <div class="intro text-center mb-4">
             <h2>Empowering Team Collaboration</h2>
             <p>Our collaborative code editor brings teams together with a powerful set of features designed for modern development workflows. Code together in real-time, debug simultaneously, and ship faster.</p>
         </div>
 
-        <div class="features">
-            <div class="feature-card">
-                <div class="feature-icon">👥</div>
-                <h3>Real-time Collaboration</h3>
-                <p>See your teammates' cursors and edits in real-time. No more merge conflicts or waiting for others to finish their work. Everyone can contribute simultaneously.</p>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="feature-icon display-4">👥</div>
+                        <h3 class="card-title">Real-time Collaboration</h3>
+                        <p class="card-text">See your teammates' cursors and edits in real-time. No more merge conflicts or waiting for others to finish their work. Everyone can contribute simultaneously.</p>
+                    </div>
+                </div>
             </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">✏</div>
-                <h3>Multi-user Editing</h3>
-                <p>Multiple developers can edit the same file simultaneously. Each user gets their own cursor with personalized color coding for easy identification.</p>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="feature-icon display-4">✏</div>
+                        <h3 class="card-title">Multi-user Editing</h3>
+                        <p class="card-text">Multiple developers can edit the same file simultaneously. Each user gets their own cursor with personalized color coding for easy identification.</p>
+                    </div>
+                </div>
             </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🎨</div>
-                <h3>Syntax Highlighting</h3>
-                <p>Support for over 100 programming languages with beautiful syntax highlighting. Makes your code more readable and helps catch errors at a glance.</p>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="feature-icon display-4">🎨</div>
+                        <h3 class="card-title">Syntax Highlighting</h3>
+                        <p class="card-text">Support for over 100 programming languages with beautiful syntax highlighting. Makes your code more readable and helps catch errors at a glance.</p>
+                    </div>
+                </div>
             </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">✨</div>
-                <h3>Auto-completion & Linting</h3>
-                <p>Intelligent code suggestions and real-time error detection. Write better code faster with contextually aware auto-completion and instant feedback.</p>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="feature-icon display-4">✨</div>
+                        <h3 class="card-title">Auto-completion & Linting</h3>
+                        <p class="card-text">Intelligent code suggestions and real-time error detection. Write better code faster with contextually aware auto-completion and instant feedback.</p>
+                    </div>
+                </div>
             </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🕒</div>
-                <h3>Version Control & History</h3>
-                <p>Track changes, revert to previous versions, and see who changed what. Integrated Git support makes committing and pushing changes seamless.</p>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="feature-icon display-4">🕒</div>
+                        <h3 class="card-title">Version Control & History</h3>
+                        <p class="card-text">Track changes, revert to previous versions, and see who changed what. Integrated Git support makes committing and pushing changes seamless.</p>
+                    </div>
+                </div>
             </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🐞</div>
-                <h3>Code Execution & Debugging</h3>
-                <p>Run your code directly in the editor and debug with teammates. Set breakpoints, inspect variables, and solve issues together in real-time.</p>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="feature-icon display-4">🐞</div>
+                        <h3 class="card-title">Code Execution & Debugging</h3>
+                        <p class="card-text">Run your code directly in the editor and debug with teammates. Set breakpoints, inspect variables, and solve issues together in real-time.</p>
+                    </div>
+                </div>
             </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">💬</div>
-                <h3>Chat & Comments</h3>
-                <p>Discuss code without switching tools. Add inline comments, start discussions, and resolve issues without leaving your coding environment.</p>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="feature-icon display-4">💬</div>
+                        <h3 class="card-title">Chat & Comments</h3>
+                        <p class="card-text">Discuss code without switching tools. Add inline comments, start discussions, and resolve issues without leaving your coding environment.</p>
+                    </div>
+                </div>
             </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🌓</div>
-                <h3>Dark & Light Theme Switching</h3>
-                <p>Work comfortably in any lighting condition with customizable themes. Switch between dark and light modes with a single click.</p>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="feature-icon display-4">🌓</div>
+                        <h3 class="card-title">Dark & Light Theme Switching</h3>
+                        <p class="card-text">Work comfortably in any lighting condition with customizable themes. Switch between dark and light modes with a single click.</p>
+                    </div>
+                </div>
             </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">📁</div>
-                <h3>File Management</h3>
-                <p>Work with multiple files simultaneously using tabs. Organize your project structure and navigate between files effortlessly.</p>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="feature-icon display-4">📁</div>
+                        <h3 class="card-title">File Management</h3>
+                        <p class="card-text">Work with multiple files simultaneously using tabs. Organize your project structure and navigate between files effortlessly.</p>
+                    </div>
+                </div>
             </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">👁</div>
-                <h3>Live Preview</h3>
-                <p>See your web projects come to life as you code. The live preview updates in real-time, showing changes immediately for frontend development.</p>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="feature-icon display-4">👁</div>
+                        <h3 class="card-title">Live Preview</h3>
+                        <p class="card-text">See your web projects come to life as you code. The live preview updates in real-time, showing changes immediately for frontend development.</p>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="demo-section">
+        <div class="demo-section text-center mt-5">
             <h2>See It In Action</h2>
             <p>Experience our collaborative editor with this interactive demo:</p>
 
-            <div class="code-demo">
-                <div class="code-header">
+            <div class="code-demo border p-3">
+                <div class="code-header d-flex justify-content-between align-items-center mb-3">
                     <div class="tabs">
                         <div class="tab active">index.html</div>
                         <div class="tab">style.css</div>
@@ -96,13 +148,13 @@
                 </div>
 
                 <div class="code-editor">
-                    <div class="collaborators">
-                        <div class="collaborator" title="Alex">A</div>
-                        <div class="collaborator" title="Taylor">T</div>
-                        <div class="collaborator" title="Jamie">J</div>
+                    <div class="collaborators mb-3">
+                        <div class="collaborator badge badge-primary" title="Alex">A</div>
+                        <div class="collaborator badge badge-secondary" title="Taylor">T</div>
+                        <div class="collaborator badge badge-success" title="Jamie">J</div>
                     </div>
 
-                    <div class="code-content">
+                    <div class="code-content bg-light p-3">
                         <div class="code-line">
                             <span class="line-number">1</span>
                             <span class="code-text"><span class="keyword">function</span> <span class="function">createTooltip</span>(<span class="variable">element</span>, <span class="variable">text</span>) {</span>
@@ -177,7 +229,7 @@
                         </div>
                     </div>
 
-                    <div class="chat-panel">
+                    <div class="chat-panel mt-3">
                         <div class="chat-message">
                             <span class="username user1">Alex:</span> I think we should add an animation when the tooltip appears.
                         </div>
@@ -187,26 +239,29 @@
                     </div>
                 </div>
 
-                <div class="features-preview">
-                    <button class="feature-button">Run Code</button>
-                    <button class="feature-button">Debug</button>
-                    <button class="feature-button">Git Commit</button>
-                    <button class="feature-button">Share</button>
-                    <button class="feature-button">Live Preview</button>
+                <div class="features-preview mt-3">
+                    <button class="btn btn-primary">Run Code</button>
+                    <button class="btn btn-secondary">Debug</button>
+                    <button class="btn btn-success">Git Commit</button>
+                    <button class="btn btn-info">Share</button>
+                    <button class="btn btn-warning">Live Preview</button>
                 </div>
 
-                <div class="preview-panel">
+                <div class="preview-panel mt-3 border p-3">
                     <p>Live preview will appear here when enabled</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer>
+    <footer class="bg-dark text-white text-center py-3 mt-5">
         <p>Experience the future of collaborative coding today</p>
         <p>© 2025 CodeCollaborate - Bringing developers together</p>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

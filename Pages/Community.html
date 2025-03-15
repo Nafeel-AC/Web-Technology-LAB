@@ -1,156 +1,254 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Community - CodeCollab</title>
-    <link rel="stylesheet" href="../Css Files/Community.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+     <link rel="stylesheet" href="../Css Files/Community.css">
 </head>
-<body>
-    <!-- Header -->
-    <header>
+<body class="bg-dark">
+    <!-- Header with Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top shadow-lg border-bottom border-dark">
         <div class="container">
-            <div class="logo">
-                <h1>CodeCollab</h1>
+            <a class="navbar-brand fw-bold text-primary" href="#"> <!-- Updated to blue -->
+                <i class="bi bi-code-slash me-2"></i>CodeCollab
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active px-3" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="#community">Community</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="#features">Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="#">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="#join">Contact</a>
+                    </li>
+                </ul>
             </div>
-            <ul class="nav-links">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./Dashboard.html">Dashboard</a></li>
-                <li><a href="./Community.html">Community</a></li>
-                <li><a href="./pricing.html">Pricing</a></li>
-                <li><a href="./Support.html">Support</a></li>
-            </ul>
         </div>
-    </header>
+    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>Welcome to the CodeCollab Community</h1>
-            <p>Join our vibrant community of developers and collaborate on exciting projects. Share your knowledge, learn from others, and grow together.</p>
-            <a href="#join" class="btn btn-primary btn-large">Join Now</a>
+    <!-- Hero Section with Bootstrap -->
+    <section class="bg-black text-white py-5 gradient-overlay">
+        <div class="container py-5 text-center">
+            <h1 class="display-3 fw-bold mb-4 text-white">Welcome to the <span class="text-primary">CodeCollab</span> Community</h1> <!-- Updated to blue -->
+            <p class="lead mb-4 px-md-5 mx-md-5 text-light">Join our vibrant community of developers and collaborate on exciting projects. Share your knowledge, learn from others, and grow together.</p>
+            <a href="#join" class="btn btn-primary btn-lg px-5 py-3 rounded-pill">Join Now</a> <!-- Updated to blue -->
         </div>
     </section>
 
     <!-- Main Content -->
     <main>
-        <!-- Community Section -->
-        <section id="community">
+        <!-- Community Section with Bootstrap Grid -->
+        <section id="community" class="py-5 bg-dark">
             <div class="container">
-                <h2 class="section-title">Connect with Fellow Developers</h2>
-                <div class="community-section">
-                    <div class="community-image">
-                        <img src="community_image.jpg" alt="Community Image">
-                    </div>
-                    <p>Join our vibrant community of developers and collaborate on exciting projects. Share your knowledge, learn from others, and grow together. Our community is a place where you can find support, inspiration, and opportunities to enhance your coding skills.</p>
-                    <div style="text-align: center;">
-                        <button class="btn btn-primary" onclick="alert('Thank you for joining our community!')">Join Now</button>
+                <h2 class="text-center mb-5 fw-bold text-white">Connect with <span class="text-primary">Fellow Developers</span></h2> <!-- Updated to blue -->
+                <div class="card bg-dark-subtle border-0 rounded-4 shadow-lg mb-5 hover-lift">
+                    <div class="card-body p-4 p-md-5">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 mb-4 mb-lg-0">
+                                <div class="rounded-4 overflow-hidden hover-scale">
+                                    <img src="community_image.jpg" alt="Community Image" class="img-fluid rounded-4">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <p class="card-text fs-5">Join our vibrant community of developers and collaborate on exciting projects. Share your knowledge, learn from others, and grow together. Our community is a place where you can find support, inspiration, and opportunities to enhance your coding skills.</p>
+                                <div class="text-center mt-4">
+                                    <button class="btn btn-primary px-4 py-2 rounded-pill">Join Now</button> <!-- Updated to blue -->
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Features Section -->
-        <section id="features">
+        <!-- Features Section with Bootstrap Cards -->
+        <section id="features" class="py-5 bg-black">
             <div class="container">
-                <h2 class="section-title">Why Join CodeCollab?</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <img src="collaborate_icon.png" alt="Collaborate">
+                <h2 class="text-center mb-5 fw-bold text-white">Why Join <span class="text-primary">CodeCollab</span>?</h2> <!-- Updated to blue -->
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card bg-dark h-100 border-0 rounded-4 shadow-lg hover-lift">
+                            <div class="card-body p-4 text-center">
+                                <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 100px; height: 100px;"> <!-- Updated to blue -->
+                                    <img src="collaborate_icon.png" alt="Collaborate" width="50" height="50">
+                                </div>
+                                <h3 class="card-title h4 mb-3 text-primary">Collaborate</h3> <!-- Updated to blue -->
+                                <p class="card-text text-light">Work on projects with developers from around the world and build amazing things together.</p>
+                            </div>
                         </div>
-                        <h3>Collaborate</h3>
-                        <p>Work on projects with developers from around the world and build amazing things together.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <img src="learn_icon.png" alt="Learn">
+                    <div class="col-md-4">
+                        <div class="card bg-dark h-100 border-0 rounded-4 shadow-lg hover-lift">
+                            <div class="card-body p-4 text-center">
+                                <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 100px; height: 100px;"> <!-- Updated to blue -->
+                                    <img src="learn_icon.png" alt="Learn" width="50" height="50">
+                                </div>
+                                <h3 class="card-title h4 mb-3 text-primary">Learn</h3> <!-- Updated to blue -->
+                                <p class="card-text text-light">Access tutorials, workshops, and resources to improve your coding skills.</p>
+                            </div>
                         </div>
-                        <h3>Learn</h3>
-                        <p>Access tutorials, workshops, and resources to improve your coding skills.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <img src="network_icon.png" alt="Network">
+                    <div class="col-md-4">
+                        <div class="card bg-dark h-100 border-0 rounded-4 shadow-lg hover-lift">
+                            <div class="card-body p-4 text-center">
+                                <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 100px; height: 100px;"> <!-- Updated to blue -->
+                                    <img src="network_icon.png" alt="Network" width="50" height="50">
+                                </div>
+                                <h3 class="card-title h4 mb-3 text-primary">Network</h3> <!-- Updated to blue -->
+                                <p class="card-text text-light">Connect with like-minded developers and expand your professional network.</p>
+                            </div>
                         </div>
-                        <h3>Network</h3>
-                        <p>Connect with like-minded developers and expand your professional network.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Form Section -->
-        <section id="join">
+        <!-- Form Section with Bootstrap Form -->
+        <section id="join" class="py-5 bg-dark">
             <div class="container">
-                <div class="form-section">
-                    <h2 class="section-title">Sign Up for the Community</h2>
-                    <div class="form-container">
-                        <form id="signup-form">
-                            <div class="form-group">
-                                <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card bg-dark-subtle border-0 rounded-4 shadow-lg hover-lift">
+                            <div class="card-body p-4 p-md-5">
+                                <h2 class="text-center mb-4 fw-bold text-white">Sign Up for the <span class="text-primary">Community</span></h2> <!-- Updated to blue -->
+                                <form id="signup-form" class="needs-validation" novalidate>
+                                    <div class="mb-4">
+                                        <div class="input-group input-group-lg">
+                                            <span class="input-group-text bg-dark border-0 text-light">
+                                                <i class="bi bi-person-fill"></i>
+                                            </span>
+                                            <input type="text" id="name" class="form-control form-control-lg bg-dark text-light border-0 glow-border" placeholder="Enter your name" required>
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Please enter your name.
+                                        </div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <div class="input-group input-group-lg">
+                                            <span class="input-group-text bg-dark border-0 text-light">
+                                                <i class="bi bi-envelope-fill"></i>
+                                            </span>
+                                            <input type="email" id="email" class="form-control form-control-lg bg-dark text-light border-0 glow-border" placeholder="Enter your email" required>
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Please enter a valid email address.
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary btn-lg px-5 py-3 rounded-pill">Sign Up</button> <!-- Updated to blue -->
+                                    </div>
+                                </form>
                             </div>
-                            <div class="form-group">
-                                <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
-                            </div>
-                            <div style="text-align: center;">
-                                <button type="submit" class="btn btn-secondary">Sign Up</button>
-                            </div>
-                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-5 bg-black">
+            <div class="container">
+                <div class="row g-4 text-center">
+                    <div class="col-md-3 col-6">
+                        <div class="p-4 rounded-4 bg-dark hover-lift">
+                            <h2 class="display-4 fw-bold text-primary">10k+</h2> <!-- Updated to blue -->
+                            <p class="text-light mb-0">Community Members</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="p-4 rounded-4 bg-dark hover-lift">
+                            <h2 class="display-4 fw-bold text-primary">500+</h2> <!-- Updated to blue -->
+                            <p class="text-light mb-0">Projects Completed</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="p-4 rounded-4 bg-dark hover-lift">
+                            <h2 class="display-4 fw-bold text-primary">50+</h2> <!-- Updated to blue -->
+                            <p class="text-light mb-0">Countries</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="p-4 rounded-4 bg-dark hover-lift">
+                            <h2 class="display-4 fw-bold text-primary">24/7</h2> <!-- Updated to blue -->
+                            <p class="text-light mb-0">Support</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
+    <!-- Footer with Bootstrap Grid -->
+    <footer class="bg-black text-white py-5 border-top border-dark">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>CodeCollab</h3>
-                    <p>A community of developers working together to build amazing projects and share knowledge.</p>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h3 class="h5 mb-3 fw-bold text-primary">CodeCollab</h3> <!-- Updated to blue -->
+                    <p class="text-light">A community of developers working together to build amazing projects and share knowledge.</p>
                 </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Community</a></li>
-                        <li><a href="#">Resources</a></li>
-                        <li><a href="#">Events</a></li>
+                <div class="col-lg-2 col-md-6">
+                    <h3 class="h5 mb-3 fw-bold text-primary">Quick Links</h3> <!-- Updated to blue -->
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-light">Home</a></li>
+                        <li class="mb-2"><a href="#community" class="text-decoration-none text-light">Community</a></li>
+                        <li class="mb-2"><a href="#features" class="text-decoration-none text-light">Resources</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-light">Events</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Connect With Us</h3>
-                    <p>Follow us on social media and stay updated with the latest news and events.</p>
-                    <div class="social-icons">
-                        <a href="https://facebook.com" target="_blank" class="social-icon">
-                            <img src="facebook_icon.png" alt="Facebook">
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="h5 mb-3 fw-bold text-primary">Connect With Us</h3> <!-- Updated to blue -->
+                    <p class="text-light">Follow us on social media and stay updated with the latest news and events.</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="https://facebook.com" target="_blank" class="social-icon bg-dark d-flex align-items-center justify-content-center rounded-circle" style="width: 45px; height: 45px;">
+                            <i class="bi bi-facebook text-light fs-5"></i>
                         </a>
-                        <a href="https://twitter.com" target="_blank" class="social-icon">
-                            <img src="twitter_icon.png" alt="Twitter">
+                        <a href="https://twitter.com" target="_blank" class="social-icon bg-dark d-flex align-items-center justify-content-center rounded-circle" style="width: 45px; height: 45px;">
+                            <i class="bi bi-twitter-x text-light fs-5"></i>
                         </a>
-                        <a href="https://linkedin.com" target="_blank" class="social-icon">
-                            <img src="linkedin_icon.png" alt="LinkedIn">
+                        <a href="https://linkedin.com" target="_blank" class="social-icon bg-dark d-flex align-items-center justify-content-center rounded-circle" style="width: 45px; height: 45px;">
+                            <i class="bi bi-linkedin text-light fs-5"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" class="social-icon bg-dark d-flex align-items-center justify-content-center rounded-circle" style="width: 45px; height: 45px;">
+                            <i class="bi bi-github text-light fs-5"></i>
                         </a>
                     </div>
                 </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="h5 mb-3 fw-bold text-primary">Newsletter</h3> <!-- Updated to blue -->
+                    <p class="text-light">Subscribe to our newsletter for the latest updates.</p>
+                    <div class="input-group mt-3">
+                        <input type="email" class="form-control bg-dark text-light border-0 glow-border" placeholder="Your email">
+                        <button class="btn btn-primary" type="button"> <!-- Updated to blue -->
+                            <i class="bi bi-send-fill"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 CodeCollab. All rights reserved.</p>
+            <hr class="my-4 bg-dark opacity-25">
+            <div class="text-center text-light">
+                <p class="mb-0">&copy; 2025 CodeCollab. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Form submission handling
-        document.getElementById('signup-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            alert(`Thank you, ${name}! We'll contact you at ${email} shortly.`);
-            document.getElementById('signup-form').reset();
-        });
-    </script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
