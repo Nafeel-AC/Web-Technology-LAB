@@ -4,98 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeCollab - Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../Css Files/styles.css">
     <link rel="stylesheet" href="../Css Files/Products.css">
 </head>
 <body>
-    <header>
-        <div class="logo">CodeCollab</div>
-        <nav>
-            <ul>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Menu</a>
-                    <div class="dropdown-content">
-                        <a href="Products.html">Products</a>
-                        <a href="features.html">Features</a>
-                        <a href="#">Pricing</a>
-                        <a href="Community.html">Community</a>
-                        <a href="Support.html">Support</a>
+    <header class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-6 col-md-3">
+                <div class="logo">CodeCollab</div>
+            </div>
+            <div class="col-6 col-md-9">
+                <nav class="navbar navbar-expand-lg">
+                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Menu</a>
+                                <ul class="dropdown-menu dropdown-content">
+                                    <li><a class="dropdown-item" href="Products.html">Products</a></li>
+                                    <li><a class="dropdown-item" href="features.html">Features</a></li>
+                                    <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                                    <li><a class="dropdown-item" href="Community.html">Community</a></li>
+                                    <li><a class="dropdown-item" href="Support.html">Support</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
-                </li>
-            </ul>
-        </nav>
+                </nav>
+            </div>
+        </div>
     </header>
 
-    <section class="hero">
-        <h1>Our Products</h1>
-        <p>Discover tools that empower your development workflow</p>
-    </section>
-
-    <section class="products-grid">
-        <div class="product-card">
-            <h3>CodeCollab IDE</h3>
-            <img src="ide-image.png" alt="IDE Screenshot">
-            <p>Our flagship collaborative integrated development environment.</p>
-            <ul>
-                <li>Real-time collaboration</li>
-                <li>Intelligent code completion</li>
-                <li>Integrated debugging</li>
-            </ul>
-            <button class="learn-more">Learn More</button>
-        </div>
-
-        <div class="product-card">
-            <h3>CodeCollab Version Control</h3>
-            <img src="version-control.png" alt="Version Control System">
-            <p>Advanced version control system for teams.</p>
-            <ul>
-                <li>Distributed repositories</li>
-                <li>Branch management</li>
-                <li>Code review tools</li>
-            </ul>
-            <button class="learn-more">Learn More</button>
-        </div>
-
-        <div class="product-card">
-            <h3>CodeCollab Cloud</h3>
-            <img src="cloud-service.png" alt="Cloud Services">
-            <p>Cloud-based development environment.</p>
-            <ul>
-                <li>Scalable infrastructure</li>
-                <li>Automated deployments</li>
-                <li>24/7 availability</li>
-            </ul>
-            <button class="learn-more">Learn More</button>
+    <section class="hero container-fluid">
+        <div class="row justify-content-center text-center">
+            <div class="col-md-10 col-lg-8">
+                <h1>Our Products</h1>
+                <p>Discover tools that empower your development workflow</p>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-section">
-            <h3>Company</h3>
-            <ul>
-                <li>About Us</li>
-                <li>Blog</li>
-                <li>Contact</li>
-            </ul>
+    <section class="products-grid container">
+        <div class="row">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="product-card h-100">
+                    <h3>CodeCollab IDE</h3>
+                    <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="IDE Screenshot" class="img-fluid">
+                    <p>Our flagship collaborative integrated development environment.</p>
+                    <ul>
+                        <li>Real-time collaboration</li>
+                        <li>Intelligent code completion</li>
+                        <li>Integrated debugging</li>
+                    </ul>
+                    <button class="learn-more">Learn More</button>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="product-card h-100">
+                    <h3>CodeCollab Version Control</h3>
+                    <img src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-4.0.3&auto=format&fit=crop&w=1476&q=80" alt="Version Control System" class="img-fluid">
+                    <p>Advanced version control system for teams.</p>
+                    <ul>
+                        <li>Distributed repositories</li>
+                        <li>Branch management</li>
+                        <li>Code review tools</li>
+                    </ul>
+                    <button class="learn-more">Learn More</button>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="product-card h-100">
+                    <h3>CodeCollab Cloud</h3>
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Cloud Services" class="img-fluid">
+                    <p>Cloud-based development environment.</p>
+                    <ul>
+                        <li>Scalable infrastructure</li>
+                        <li>Automated deployments</li>
+                        <li>24/7 availability</li>
+                    </ul>
+                    <button class="learn-more">Learn More</button>
+                </div>
+            </div>
         </div>
-        <div class="footer-section">
-            <h3>Resources</h3>
-            <ul>
-                <li>Documentation</li>
-                <li>API Reference</li>
-                <li>Community Forum</li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h3>Follow Us</h3>
-            <ul>
-                <li>Twitter</li>
-                <li>Facebook</li>
-                <li>LinkedIn</li>
-            </ul>
+    </section>
+
+    <footer class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li>About Us</li>
+                    <li>Blog</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div class="col-md-4 footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li>Documentation</li>
+                    <li>API Reference</li>
+                    <li>Community Forum</li>
+                </ul>
+            </div>
+            <div class="col-md-4 footer-section">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li>Twitter</li>
+                    <li>Facebook</li>
+                    <li>LinkedIn</li>
+                </ul>
+            </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    
 </body>
 </html>

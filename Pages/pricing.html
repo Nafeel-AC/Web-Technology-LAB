@@ -4,162 +4,181 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeCollab - Pricing Plans</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Original CSS -->
     <link rel="stylesheet" href="../Css Files/pricing.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <div class="logo">CodeCollab</div>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="features.html">Features</a></li>
-                    <li><a href="#" class="active">Pricing</a></li>
-                    <li><a href="support.html">Contact</a></li>
-                </ul>
+            <nav class="navbar navbar-expand-lg">
+                <div class="logo navbar-brand">CodeCollab</div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="features.html">Features</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="support.html">Contact</a></li>
+                    </ul>
+                    <div class="cta-buttons d-flex">
+                        <a href="#" class="btn btn-secondary me-2">Log In</a>
+                        <a href="#" class="btn btn-primary">Sign Up</a>
+                    </div>
+                </div>
             </nav>
-            <div class="cta-buttons">
-                <a href="#" class="btn btn-secondary">Log In</a>
-                <a href="#" class="btn btn-primary">Sign Up</a>
-            </div>
         </div>
     </header>
-
     <main>
         <section class="pricing-hero">
             <div class="container">
-                <h1>Choose the Perfect Plan for Your Coding Needs</h1>
-                <p>Simple, transparent pricing to help you collaborate efficiently.</p>
-                <div class="pricing-toggle">
-                    <span>Monthly</span>
-                    <label class="switch">
-                        <input type="checkbox" id="billing-toggle">
-                        <span class="slider round"></span>
-                    </label>
-                    <span>Annual <span class="discount-badge">Save 20%</span></span>
+                <div class="row justify-content-center text-center">
+                    <div class="col-md-10 col-lg-8">
+                        <h1>Choose the Perfect Plan for Your Coding Needs</h1>
+                        <p>Simple, transparent pricing to help you collaborate efficiently.</p>
+                        <div class="pricing-toggle">
+                            <span>Monthly</span>
+                            <label class="switch">
+                                <input type="checkbox" id="billing-toggle">
+                                <span class="slider round"></span>
+                            </label>
+                            <span>Annual <span class="discount-badge">Save 20%</span></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="pricing-plans">
             <div class="container">
-                <div class="pricing-cards">
+                <div class="row pricing-cards">
                     <!-- Free Plan -->
-                    <div class="pricing-card">
-                        <div class="card-header">
-                            <h2>Free</h2>
-                            <div class="price">
-                                <span class="amount">$0</span>
-                                <span class="period">forever</span>
+                    <div class="col-md-6 col-lg-3 mb-4">
+                        <div class="pricing-card h-100">
+                            <div class="card-header">
+                                <h2>Free</h2>
+                                <div class="price">
+                                    <span class="amount">$0</span>
+                                    <span class="period">forever</span>
+                                </div>
+                                <p>Perfect for individual developers getting started</p>
                             </div>
-                            <p>Perfect for individual developers getting started</p>
-                        </div>
-                        <div class="card-body">
-                            <ul class="features-list">
-                                <li>2 Collaborators</li>
-                                <li>Basic Editor Features</li>
-                                <li>100MB Cloud Storage</li>
-                                <li>Community Support</li>
-                                <li>7-Day History</li>
-                            </ul>
-                        </div>
-                        <div class="card-footer">
-                            <a href="#" class="btn btn-full">Start for Free</a>
+                            <div class="card-body">
+                                <ul class="features-list">
+                                    <li>2 Collaborators</li>
+                                    <li>Basic Editor Features</li>
+                                    <li>100MB Cloud Storage</li>
+                                    <li>Community Support</li>
+                                    <li>7-Day History</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="btn btn-full">Start for Free</a>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Pro Plan -->
-                    <div class="pricing-card highlighted">
-                        <div class="popular-badge">Most Popular</div>
-                        <div class="card-header">
-                            <h2>Pro</h2>
-                            <div class="price">
-                                <span class="amount">$10</span>
-                                <span class="period">per month</span>
+                    <div class="col-md-6 col-lg-3 mb-4">
+                        <div class="pricing-card highlighted h-100">
+                            <div class="popular-badge">Most Popular</div>
+                            <div class="card-header">
+                                <h2>Pro</h2>
+                                <div class="price">
+                                    <span class="amount">$10</span>
+                                    <span class="period">per month</span>
+                                </div>
+                                <div class="price annual-price">
+                                    <span class="amount">$100</span>
+                                    <span class="period">per year</span>
+                                    <span class="save-badge">Save 20%</span>
+                                </div>
+                                <p>For professionals and small teams</p>
                             </div>
-                            <div class="price annual-price">
-                                <span class="amount">$100</span>
-                                <span class="period">per year</span>
-                                <span class="save-badge">Save 20%</span>
+                            <div class="card-body">
+                                <ul class="features-list">
+                                    <li>5 Collaborators</li>
+                                    <li>GitHub Integration</li>
+                                    <li>AI-Assisted Coding</li>
+                                    <li>Custom Extensions</li>
+                                    <li>5GB Cloud Storage</li>
+                                    <li>Email Support</li>
+                                    <li>30-Day History</li>
+                                </ul>
                             </div>
-                            <p>For professionals and small teams</p>
-                        </div>
-                        <div class="card-body">
-                            <ul class="features-list">
-                                <li>5 Collaborators</li>
-                                <li>GitHub Integration</li>
-                                <li>AI-Assisted Coding</li>
-                                <li>Custom Extensions</li>
-                                <li>5GB Cloud Storage</li>
-                                <li>Email Support</li>
-                                <li>30-Day History</li>
-                            </ul>
-                        </div>
-                        <div class="card-footer">
-                            <a href="#" class="btn btn-full btn-primary">Upgrade to Pro</a>
-                            <p class="trial-note">Includes 14-day free trial</p>
+                            <div class="card-footer">
+                                <a href="#" class="btn btn-full btn-primary">Upgrade to Pro</a>
+                                <p class="trial-note">Includes 14-day free trial</p>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Business Plan -->
-                    <div class="pricing-card">
-                        <div class="card-header">
-                            <h2>Business</h2>
-                            <div class="price">
-                                <span class="amount">$25</span>
-                                <span class="period">per month</span>
+                    <div class="col-md-6 col-lg-3 mb-4">
+                        <div class="pricing-card h-100">
+                            <div class="card-header">
+                                <h2>Business</h2>
+                                <div class="price">
+                                    <span class="amount">$25</span>
+                                    <span class="period">per month</span>
+                                </div>
+                                <div class="price annual-price">
+                                    <span class="amount">$250</span>
+                                    <span class="period">per year</span>
+                                    <span class="save-badge">Save 20%</span>
+                                </div>
+                                <p>For growing development teams</p>
                             </div>
-                            <div class="price annual-price">
-                                <span class="amount">$250</span>
-                                <span class="period">per year</span>
-                                <span class="save-badge">Save 20%</span>
+                            <div class="card-body">
+                                <ul class="features-list">
+                                    <li>20 Collaborators</li>
+                                    <li>Advanced GitHub Integration</li>
+                                    <li>Enhanced AI Capabilities</li>
+                                    <li>Custom Extensions</li>
+                                    <li>50GB Cloud Storage</li>
+                                    <li>24/7 Chat Support</li>
+                                    <li>90-Day History</li>
+                                    <li>SSO Authentication</li>
+                                    <li>Admin Dashboard</li>
+                                </ul>
                             </div>
-                            <p>For growing development teams</p>
-                        </div>
-                        <div class="card-body">
-                            <ul class="features-list">
-                                <li>20 Collaborators</li>
-                                <li>Advanced GitHub Integration</li>
-                                <li>Enhanced AI Capabilities</li>
-                                <li>Custom Extensions</li>
-                                <li>50GB Cloud Storage</li>
-                                <li>24/7 Chat Support</li>
-                                <li>90-Day History</li>
-                                <li>SSO Authentication</li>
-                                <li>Admin Dashboard</li>
-                            </ul>
-                        </div>
-                        <div class="card-footer">
-                            <a href="#" class="btn btn-full">Choose Business</a>
-                            <p class="trial-note">Includes 14-day free trial</p>
+                            <div class="card-footer">
+                                <a href="#" class="btn btn-full">Choose Business</a>
+                                <p class="trial-note">Includes 14-day free trial</p>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Enterprise Plan -->
-                    <div class="pricing-card">
-                        <div class="card-header">
-                            <h2>Enterprise</h2>
-                            <div class="price">
-                                <span class="amount">Custom</span>
+                    <div class="col-md-6 col-lg-3 mb-4">
+                        <div class="pricing-card h-100">
+                            <div class="card-header">
+                                <h2>Enterprise</h2>
+                                <div class="price">
+                                    <span class="amount">Custom</span>
+                                </div>
+                                <p>For large organizations with specific needs</p>
                             </div>
-                            <p>For large organizations with specific needs</p>
-                        </div>
-                        <div class="card-body">
-                            <ul class="features-list">
-                                <li>Unlimited Collaborators</li>
-                                <li>Custom Integrations</li>
-                                <li>Advanced Security Features</li>
-                                <li>Custom Storage Solutions</li>
-                                <li>Dedicated Support Manager</li>
-                                <li>Unlimited History</li>
-                                <li>Enterprise SSO</li>
-                                <li>Advanced Permissions</li>
-                                <li>SLA Guarantees</li>
-                                <li>Compliance (SOC 2, GDPR)</li>
-                            </ul>
-                        </div>
-                        <div class="card-footer">
-                            <a href="#" class="btn btn-full">Contact Sales</a>
+                            <div class="card-body">
+                                <ul class="features-list">
+                                    <li>Unlimited Collaborators</li>
+                                    <li>Custom Integrations</li>
+                                    <li>Advanced Security Features</li>
+                                    <li>Custom Storage Solutions</li>
+                                    <li>Dedicated Support Manager</li>
+                                    <li>Unlimited History</li>
+                                    <li>Enterprise SSO</li>
+                                    <li>Advanced Permissions</li>
+                                    <li>SLA Guarantees</li>
+                                    <li>Compliance (SOC 2, GDPR)</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="btn btn-full">Contact Sales</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -168,7 +187,7 @@
 
         <section class="feature-comparison">
             <div class="container">
-                <h2>Detailed Feature Comparison</h2>
+                <h2 class="text-center mb-4">Detailed Feature Comparison</h2>
                 <div class="table-responsive">
                     <table class="comparison-table">
                         <thead>
@@ -273,67 +292,85 @@
 
         <section class="testimonials">
             <div class="container">
-                <h2>Trusted by Developers Worldwide</h2>
-                <div class="testimonial-grid">
-                    <div class="testimonial">
-                        <div class="quote">"CodeCollab has revolutionized our development workflow. The real-time collaboration features have cut our code review time in half."</div>
-                        <div class="author">
-                            <div class="name">Sarah Johnson</div>
-                            <div class="title">Lead Developer, TechCorp</div>
+                <h2 class="text-center mb-4">Trusted by Developers Worldwide</h2>
+                <div class="row testimonial-grid">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="testimonial">
+                            <div class="quote">"CodeCollab has revolutionized our development workflow. The real-time collaboration features have cut our code review time in half."</div>
+                            <div class="author">
+                                <div class="name">Sarah Johnson</div>
+                                <div class="title">Lead Developer, TechCorp</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="testimonial">
-                        <div class="quote">"The AI-assisted coding features have been a game changer for our team. It's like having an extra developer on staff."</div>
-                        <div class="author">
-                            <div class="name">Michael Chen</div>
-                            <div class="title">CTO, StartupX</div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="testimonial">
+                            <div class="quote">"The AI-assisted coding features have been a game changer for our team. It's like having an extra developer on staff."</div>
+                            <div class="author">
+                                <div class="name">Michael Chen</div>
+                                <div class="title">CTO, StartupX</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="testimonial">
-                        <div class="quote">"The enterprise features give us the security and compliance we need while keeping our developers happy with a great tool."</div>
-                        <div class="author">
-                            <div class="name">Emily Rodriguez</div>
-                            <div class="title">Engineering Manager, Enterprise Solutions</div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="testimonial">
+                            <div class="quote">"The enterprise features give us the security and compliance we need while keeping our developers happy with a great tool."</div>
+                            <div class="author">
+                                <div class="name">Emily Rodriguez</div>
+                                <div class="title">Engineering Manager, Enterprise Solutions</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="client-logos">
-                    <div class="logo">Company 1</div>
-                    <div class="logo">Company 2</div>
-                    <div class="logo">Company 3</div>
-                    <div class="logo">Company 4</div>
-                    <div class="logo">Company 5</div>
+                <div class="row client-logos justify-content-center">
+                    <div class="col-4 col-md-2 mb-3 text-center logo">Company 1</div>
+                    <div class="col-4 col-md-2 mb-3 text-center logo">Company 2</div>
+                    <div class="col-4 col-md-2 mb-3 text-center logo">Company 3</div>
+                    <div class="col-4 col-md-2 mb-3 text-center logo">Company 4</div>
+                    <div class="col-4 col-md-2 mb-3 text-center logo">Company 5</div>
                 </div>
             </div>
         </section>
 
         <section class="faq">
             <div class="container">
-                <h2>Frequently Asked Questions</h2>
-                <div class="faq-grid">
-                    <div class="faq-item">
-                        <h3>What happens if I exceed my usage limits?</h3>
-                        <p>You'll receive a notification when you approach your limits. If you exceed them, you can either upgrade to a higher tier or pay for additional resources at a prorated price.</p>
+                <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+                <div class="row faq-grid">
+                    <div class="col-md-6 mb-4">
+                        <div class="faq-item">
+                            <h3>What happens if I exceed my usage limits?</h3>
+                            <p>You'll receive a notification when you approach your limits. If you exceed them, you can either upgrade to a higher tier or pay for additional resources at a prorated price.</p>
+                        </div>
                     </div>
-                    <div class="faq-item">
-                        <h3>Can I cancel my plan anytime?</h3>
-                        <p>Yes, you can cancel your subscription at any time. For monthly plans, billing stops at the end of the current billing cycle. For annual plans, you can continue using the service until your plan expires.</p>
+                    <div class="col-md-6 mb-4">
+                        <div class="faq-item">
+                            <h3>Can I cancel my plan anytime?</h3>
+                            <p>Yes, you can cancel your subscription at any time. For monthly plans, billing stops at the end of the current billing cycle. For annual plans, you can continue using the service until your plan expires.</p>
+                        </div>
                     </div>
-                    <div class="faq-item">
-                        <h3>Is there student/educational pricing?</h3>
-                        <p>Yes! We offer a 50% discount for verified students and educational institutions. Contact our support team with your academic email for verification.</p>
+                    <div class="col-md-6 mb-4">
+                        <div class="faq-item">
+                            <h3>Is there student/educational pricing?</h3>
+                            <p>Yes! We offer a 50% discount for verified students and educational institutions. Contact our support team with your academic email for verification.</p>
+                        </div>
                     </div>
-                    <div class="faq-item">
-                        <h3>How secure is my code?</h3>
-                        <p>We take security seriously. All code is encrypted at rest and in transit. Business and Enterprise plans include additional security features like SSO and advanced permissions.</p>
+                    <div class="col-md-6 mb-4">
+                        <div class="faq-item">
+                            <h3>How secure is my code?</h3>
+                            <p>We take security seriously. All code is encrypted at rest and in transit. Business and Enterprise plans include additional security features like SSO and advanced permissions.</p>
+                        </div>
                     </div>
-                    <div class="faq-item">
-                        <h3>Can I switch between plans?</h3>
-                        <p>Yes, you can upgrade or downgrade your plan at any time. Upgrades take effect immediately, while downgrades take effect at the end of your current billing cycle.</p>
+                    <div class="col-md-6 mb-4">
+                        <div class="faq-item">
+                            <h3>Can I switch between plans?</h3>
+                            <p>Yes, you can upgrade or downgrade your plan at any time. Upgrades take effect immediately, while downgrades take effect at the end of your current billing cycle.</p>
+                        </div>
                     </div>
-                    <div class="faq-item">
-                        <h3>Do you offer refunds?</h3>
-                        <p>We offer a 14-day money-back guarantee for all paid plans. If you're not satisfied with our service, contact support within 14 days of purchase for a full refund.</p>
+                    <div class="col-md-6 mb-4">
+                        <div class="faq-item">
+                            <h3>Do you offer refunds?</h3>
+                            <p>We offer a 14-day money-back guarantee for all paid plans. If you're not satisfied with our service, contact support within 14 days of purchase for a full refund.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -341,11 +378,15 @@
 
         <section class="cta-section">
             <div class="container">
-                <h2>Ready to Supercharge Your Coding Experience?</h2>
-                <p>Join thousands of developers who have transformed their workflow with CodeCollab.</p>
-                <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary btn-large">Start Your Free Trial</a>
-                    <a href="#" class="btn btn-secondary btn-large">Schedule a Demo</a>
+                <div class="row justify-content-center text-center">
+                    <div class="col-md-10 col-lg-8">
+                        <h2>Ready to Supercharge Your Coding Experience?</h2>
+                        <p>Join thousands of developers who have transformed their workflow with CodeCollab.</p>
+                        <div class="cta-buttons">
+                            <a href="#" class="btn btn-primary btn-large me-2 mb-2 mb-md-0">Start Your Free Trial</a>
+                            <a href="#" class="btn btn-secondary btn-large">Schedule a Demo</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -353,8 +394,8 @@
 
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
+            <div class="row footer-grid">
+                <div class="col-md-6 col-lg-3 mb-4 footer-col">
                     <div class="footer-logo">CodeCollab</div>
                     <p>A collaborative code editor for modern development teams.</p>
                     <div class="social-links">
@@ -363,7 +404,7 @@
                         <a href="#" class="social-icon">LinkedIn</a>
                     </div>
                 </div>
-                <div class="footer-col">
+                <div class="col-6 col-md-6 col-lg-3 mb-4 footer-col">
                     <h3>Product</h3>
                     <ul>
                         <li><a href="#">Features</a></li>
@@ -372,7 +413,7 @@
                         <li><a href="#">Roadmap</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
+                <div class="col-6 col-md-6 col-lg-3 mb-4 footer-col">
                     <h3>Resources</h3>
                     <ul>
                         <li><a href="#">Documentation</a></li>
@@ -381,7 +422,7 @@
                         <li><a href="#">Changelog</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
+                <div class="col-md-6 col-lg-3 mb-4 footer-col">
                     <h3>Company</h3>
                     <ul>
                         <li><a href="#">About Us</a></li>
@@ -391,15 +432,18 @@
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <div class="copyright">&copy; 2025 CodeCollab. All rights reserved.</div>
-                <div class="legal-links">
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Privacy Policy</a>
+            <div class="row footer-bottom">
+                <div class="col-md-6 mb-3 mb-md-0 copyright">&copy; 2025 CodeCollab. All rights reserved.</div>
+                <div class="col-md-6 text-md-end legal-links">
+                    <a href="#" class="me-3">Terms of Service</a>
+                    <a href="#" class="me-3">Privacy Policy</a>
                     <a href="#">Cookie Policy</a>
                 </div>
             </div>
         </div>
     </footer>
+
+    
 </body>
 </html>
+
