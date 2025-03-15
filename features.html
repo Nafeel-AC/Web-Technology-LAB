@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Code Editor - Essential Features</title>
+    <link rel="stylesheet" href="features.css">
+</head>
+<body>
+    <header>
+        <h1>Collaborative Code Editor</h1>
+        <p>Seamless Real-time Collaboration for Developers</p>
+        <button id="themeToggle" class="theme-toggle">🌙</button>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <h2>Empowering Team Collaboration</h2>
+            <p>Our collaborative code editor brings teams together with a powerful set of features designed for modern development workflows. Code together in real-time, debug simultaneously, and ship faster.</p>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Real-time Collaboration</h3>
+                <p>See your teammates' cursors and edits in real-time. No more merge conflicts or waiting for others to finish their work. Everyone can contribute simultaneously.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">✏</div>
+                <h3>Multi-user Editing</h3>
+                <p>Multiple developers can edit the same file simultaneously. Each user gets their own cursor with personalized color coding for easy identification.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Syntax Highlighting</h3>
+                <p>Support for over 100 programming languages with beautiful syntax highlighting. Makes your code more readable and helps catch errors at a glance.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>Auto-completion & Linting</h3>
+                <p>Intelligent code suggestions and real-time error detection. Write better code faster with contextually aware auto-completion and instant feedback.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🕒</div>
+                <h3>Version Control & History</h3>
+                <p>Track changes, revert to previous versions, and see who changed what. Integrated Git support makes committing and pushing changes seamless.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🐞</div>
+                <h3>Code Execution & Debugging</h3>
+                <p>Run your code directly in the editor and debug with teammates. Set breakpoints, inspect variables, and solve issues together in real-time.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3>Chat & Comments</h3>
+                <p>Discuss code without switching tools. Add inline comments, start discussions, and resolve issues without leaving your coding environment.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌓</div>
+                <h3>Dark & Light Theme Switching</h3>
+                <p>Work comfortably in any lighting condition with customizable themes. Switch between dark and light modes with a single click.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📁</div>
+                <h3>File Management</h3>
+                <p>Work with multiple files simultaneously using tabs. Organize your project structure and navigate between files effortlessly.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">👁</div>
+                <h3>Live Preview</h3>
+                <p>See your web projects come to life as you code. The live preview updates in real-time, showing changes immediately for frontend development.</p>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>See It In Action</h2>
+            <p>Experience our collaborative editor with this interactive demo:</p>
+
+            <div class="code-demo">
+                <div class="code-header">
+                    <div class="tabs">
+                        <div class="tab active">index.html</div>
+                        <div class="tab">style.css</div>
+                        <div class="tab">script.js</div>
+                    </div>
+                    <div class="language-indicator">JavaScript</div>
+                </div>
+
+                <div class="code-editor">
+                    <div class="collaborators">
+                        <div class="collaborator" title="Alex">A</div>
+                        <div class="collaborator" title="Taylor">T</div>
+                        <div class="collaborator" title="Jamie">J</div>
+                    </div>
+
+                    <div class="code-content">
+                        <div class="code-line">
+                            <span class="line-number">1</span>
+                            <span class="code-text"><span class="keyword">function</span> <span class="function">createTooltip</span>(<span class="variable">element</span>, <span class="variable">text</span>) {</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">2</span>
+                            <span class="code-text">  <span class="comment">// Create a tooltip element</span></span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">3</span>
+                            <span class="code-text">  <span class="keyword">const</span> <span class="variable">tooltip</span> = <span class="variable">document</span>.<span class="function">createElement</span>(<span class="string">'div'</span>);</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">4</span>
+                            <span class="code-text">  <span class="variable">tooltip</span>.<span class="variable">className</span> = <span class="string">'tooltip'</span>;</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">5</span>
+                            <span class="code-text">  <span class="variable">tooltip</span>.<span class="variable">textContent</span> = <span class="variable">text</span>;</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">6</span>
+                            <span class="code-text">  </span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">7</span>
+                            <span class="code-text">  <span class="comment">// Position the tooltip</span></span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">8</span>
+                            <span class="code-text">  <span class="variable">element</span>.<span class="function">addEventListener</span>(<span class="string">'mouseover'</span>, <span class="function">() =></span> {</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">9</span>
+                            <span class="code-text">    <span class="variable">document</span>.<span class="variable">body</span>.<span class="function">appendChild</span>(<span class="variable">tooltip</span>);</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">10</span>
+                            <span class="code-text">    <span class="keyword">const</span> <span class="variable">rect</span> = <span class="variable">element</span>.<span class="function">getBoundingClientRect</span>();<span class="cursor cursor-user1"></span></span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">11</span>
+                            <span class="code-text">    <span class="variable">tooltip</span>.<span class="variable">style</span>.<span class="variable">top</span> = <span class="string">${</span><span class="variable">rect</span>.<span class="variable">bottom</span> + <span class="variable">window</span>.<span class="variable">scrollY</span> + 5<span class="string">}px</span>;</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">12</span>
+                            <span class="code-text">    <span class="variable">tooltip</span>.<span class="variable">style</span>.<span class="variable">left</span> = <span class="string">${</span><span class="variable">rect</span>.<span class="variable">left</span> + <span class="variable">window</span>.<span class="variable">scrollX</span><span class="string">}px</span>;<span class="cursor cursor-user2"></span></span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">13</span>
+                            <span class="code-text">  });</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">14</span>
+                            <span class="code-text">  </span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">15</span>
+                            <span class="code-text">  <span class="variable">element</span>.<span class="function">addEventListener</span>(<span class="string">'mouseout'</span>, <span class="function">() =></span> {</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">16</span>
+                            <span class="code-text">    <span class="variable">document</span>.<span class="variable">body</span>.<span class="function">removeChild</span>(<span class="variable">tooltip</span>);</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">17</span>
+                            <span class="code-text">  });</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">18</span>
+                            <span class="code-text">}</span>
+                        </div>
+                    </div>
+
+                    <div class="chat-panel">
+                        <div class="chat-message">
+                            <span class="username user1">Alex:</span> I think we should add an animation when the tooltip appears.
+                        </div>
+                        <div class="chat-message">
+                            <span class="username user2">Taylor:</span> Good idea! I'll implement that transition effect.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="features-preview">
+                    <button class="feature-button">Run Code</button>
+                    <button class="feature-button">Debug</button>
+                    <button class="feature-button">Git Commit</button>
+                    <button class="feature-button">Share</button>
+                    <button class="feature-button">Live Preview</button>
+                </div>
+
+                <div class="preview-panel">
+                    <p>Live preview will appear here when enabled</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Experience the future of collaborative coding today</p>
+        <p>© 2025 CodeCollaborate - Bringing developers together</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
