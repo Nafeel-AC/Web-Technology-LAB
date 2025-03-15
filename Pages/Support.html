@@ -4,164 +4,715 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support | Collab Code Editor</title>
-    <link rel="stylesheet" href="../Css Files/support.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="support.css">
 </head>
-<body>
-    <header>
-        <div class="logo">Collab Code</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="features.html">Features</a></li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Resources</a>
-                    <div class="dropdown-content">
-                        <a href="docs.html">Documentation</a>
-                        <a href="tutorials.html">Tutorials</a>
-                        <a href="api.html">API</a>
+<body class="bg-dark text-light">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="fas fa-code me-2 text-primary"></i>
+                <span>Collab Code</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="features.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="community.html">Community</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Resources
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="docs.html">Documentation</a></li>
+                            <li><a class="dropdown-item" href="tutorials.html">Tutorials</a></li>
+                            <li><a class="dropdown-item" href="api.html">API Reference</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="community.html">Community</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pricing.html">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="support.html">Support</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="login.html" class="btn btn-outline-light me-2">Login</a>
+                    <a href="signup.html" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-gradient text-center py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Support & Help Center</h1>
+            <p class="lead mb-4">Get the help you need to make the most of your collaborative coding experience</p>
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Search for help topics...">
+                        <button class="btn btn-primary" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
                     </div>
-                </li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="support.html" class="active">Support</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <div class="hero">
-        <h1>Support & Help Center</h1>
-        <p>Get help with your collaborative coding experience</p>
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <section class="support-options">
-        <div class="support-card">
-            <i class="fas fa-book"></i>
-            <h3>Documentation</h3>
-            <p>Browse our comprehensive guides</p>
-        </div>
-        <div class="support-card">
-            <i class="fas fa-video"></i>
-            <h3>Video Tutorials</h3>
-            <p>Learn through step-by-step videos</p>
-        </div>
-        <div class="support-card">
-            <i class="fas fa-comments"></i>
-            <h3>Community Forum</h3>
-            <p>Connect with other developers</p>
-        </div>
-    </section>
-    
-    <section class="faq">
-        <h2>Frequently Asked Questions</h2>
-        
-        <div class="faq-item">
-            <div class="faq-question">
-                <h3>How do I create a new collaborative session?</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                <p>Click on "New Session" in the dashboard and share the generated link with your team members. Each session has a unique ID that allows your team to join and collaborate in real-time.</p>
-            </div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question">
-                <h3>Why is my code not updating in real-time?</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                <p>Ensure you have a stable internet connection and that WebSockets are not blocked by your network. Try refreshing the page or checking if your browser supports WebSockets.</p>
-            </div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question">
-                <h3>How does cursor tracking work with multiple users?</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                <p>Our collaborative editor uses color-coded cursors to identify different users. Each user gets assigned a unique color, and user names appear next to their cursors for easy identification.</p>
-            </div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question">
-                <h3>Which programming languages are supported?</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                <p>We support JavaScript, Python, Java, C++, Ruby, PHP, Go, TypeScript, C#, Swift, Kotlin, and Rust. Each language includes syntax highlighting and auto-completion.</p>
+
+    <!-- Support Options -->
+    <section class="py-5 bg-darker">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 bg-dark text-light border-secondary hover-card">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon bg-primary bg-gradient text-white rounded-circle mb-3">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h3 class="card-title h5">Documentation</h3>
+                            <p class="card-text text-muted">Comprehensive guides for all features</p>
+                            <a href="#" class="btn btn-outline-primary mt-2">View Docs</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 bg-dark text-light border-secondary hover-card">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon bg-primary bg-gradient text-white rounded-circle mb-3">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <h3 class="card-title h5">Video Tutorials</h3>
+                            <p class="card-text text-muted">Step-by-step visual instructions</p>
+                            <a href="#" class="btn btn-outline-primary mt-2">Watch Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 bg-dark text-light border-secondary hover-card">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon bg-primary bg-gradient text-white rounded-circle mb-3">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h3 class="card-title h5">Community Forum</h3>
+                            <p class="card-text text-muted">Connect with other developers</p>
+                            <a href="#" class="btn btn-outline-primary mt-2">Join Discussion</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 bg-dark text-light border-secondary hover-card">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon bg-primary bg-gradient text-white rounded-circle mb-3">
+                                <i class="fas fa-ticket-alt"></i>
+                            </div>
+                            <h3 class="card-title h5">Submit a Ticket</h3>
+                            <p class="card-text text-muted">Get personalized support</p>
+                            <a href="#ticket-form" class="btn btn-outline-primary mt-2">Create Ticket</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    
-    <section class="contact">
-        <h2>Contact Support</h2>
-        <div class="contact-methods">
-            <div class="contact-method">
-                <i class="fas fa-envelope"></i>
-                <h3>Email</h3>
-                <p><a href="mailto:support@collabcode.com">support@collabcode.com</a></p>
-            </div>
-            <div class="contact-method">
-                <i class="fas fa-phone"></i>
-                <h3>Phone</h3>
-                <p><a href="tel:+12345678900">+1 234 567 8900</a></p>
-            </div>
-            <div class="contact-method">
-                <i class="fas fa-comment"></i>
-                <h3>Live Chat</h3>
-                <p>Available on dashboard</p>
+
+    <!-- Quick Help Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5"><i class="fas fa-bolt text-primary me-2"></i>Quick Help</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card bg-dark border-secondary h-100">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">Getting Started</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#" class="text-decoration-none"><i class="fas fa-arrow-right text-primary me-2"></i>Creating your first session</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none"><i class="fas fa-arrow-right text-primary me-2"></i>Inviting collaborators</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none"><i class="fas fa-arrow-right text-primary me-2"></i>Understanding the interface</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none"><i class="fas fa-arrow-right text-primary me-2"></i>Keyboard shortcuts</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-dark border-secondary h-100">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">Collaboration Features</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#" class="text-decoration-none"><i class="fas fa-arrow-right text-primary me-2"></i>Real-time editing</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none"><i class="fas fa-arrow-right text-primary me-2"></i>Cursor tracking</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none"><i class="fas fa-arrow-right text-primary me-2"></i>Chat functionality</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none"><i class="fas fa-arrow-right text-primary me-2"></i>Conflict resolution</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-dark border-secondary h-100">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">Troubleshooting</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#" class="text-decoration-none"><i class="fas fa-arrow-right text-primary me-2"></i>Connection issues</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none"><i class="fas fa-arrow-right text-primary me-2"></i>Performance optimization</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none"><i class="fas fa-arrow-right text-primary me-2"></i>Browser compatibility</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none"><i class="fas fa-arrow-right text-primary me-2"></i>Common error messages</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    
-    <footer>
-        <div class="footer-section">
-            <h3>Product</h3>
-            <ul>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Roadmap</a></li>
-            </ul>
+
+    <!-- FAQ Section -->
+    <section class="py-5 bg-darker">
+        <div class="container">
+            <h2 class="text-center mb-5"><i class="fas fa-question-circle text-primary me-2"></i>Frequently Asked Questions</h2>
+            
+            <div class="row mb-4">
+                <div class="col-lg-6 mb-4">
+                    <h3 class="h4 text-primary mb-3">Getting Started</h3>
+                    <div class="accordion" id="accordionGettingStarted">
+                        <div class="accordion-item bg-dark text-light border-secondary">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    How do I create a new collaborative session?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionGettingStarted">
+                                <div class="accordion-body">
+                                    <p>To create a new collaborative session:</p>
+                                    <ol>
+                                        <li>Log in to your Collab Code account</li>
+                                        <li>Navigate to the Dashboard</li>
+                                        <li>Click on "New Session" button</li>
+                                        <li>Choose your preferred programming language</li>
+                                        <li>Share the generated link with your team members</li>
+                                    </ol>
+                                    <p>Each session has a unique ID that allows your team to join and collaborate in real-time.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-dark text-light border-secondary">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    How do I invite team members to my session?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionGettingStarted">
+                                <div class="accordion-body">
+                                    <p>You can invite team members in several ways:</p>
+                                    <ul>
+                                        <li>Share the session link directly via email, Slack, or other messaging platforms</li>
+                                        <li>Use the "Invite" button in the session to send email invitations</li>
+                                        <li>Add team members to your project for permanent access</li>
+                                    </ul>
+                                    <p>All invited members can join and start collaborating immediately without additional setup.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <h3 class="h4 text-primary mb-3">Real-time Collaboration</h3>
+                    <div class="accordion" id="accordionCollaboration">
+                        <div class="accordion-item bg-dark text-light border-secondary">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    Why is my code not updating in real-time?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionCollaboration">
+                                <div class="accordion-body">
+                                    <p>If your code is not updating in real-time, try these troubleshooting steps:</p>
+                                    <ol>
+                                        <li>Check your internet connection stability</li>
+                                        <li>Ensure WebSockets are not blocked by your network</li>
+                                        <li>Try refreshing the page</li>
+                                        <li>Check if your browser supports WebSockets</li>
+                                        <li>Disable any VPN services that might interfere with connections</li>
+                                    </ol>
+                                    <p>If the issue persists, please contact our support team.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-dark text-light border-secondary">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                    How does cursor tracking work with multiple users?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionCollaboration">
+                                <div class="accordion-body">
+                                    <p>Our collaborative editor uses color-coded cursors to identify different users:</p>
+                                    <ul>
+                                        <li>Each user gets assigned a unique color</li>
+                                        <li>User names appear next to their cursors</li>
+                                        <li>You can see real-time typing from all participants</li>
+                                        <li>Hover over a cursor to see more details about the user</li>
+                                    </ul>
+                                    <p>This system allows multiple people to work simultaneously without confusion.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <h3 class="h4 text-primary mb-3">Features & Functionality</h3>
+                    <div class="accordion" id="accordionFeatures">
+                        <div class="accordion-item bg-dark text-light border-secondary">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                                    Which programming languages are supported?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFeatures">
+                                <div class="accordion-body">
+                                    <p>Collab Code Editor supports a wide range of programming languages, including:</p>
+                                    <div class="row row-cols-2 row-cols-md-3 g-2 mb-3">
+                                        <div class="col"><span class="badge bg-secondary w-100 py-2">JavaScript</span></div>
+                                        <div class="col"><span class="badge bg-secondary w-100 py-2">Python</span></div>
+                                        <div class="col"><span class="badge bg-secondary w-100 py-2">Java</span></div>
+                                        <div class="col"><span class="badge bg-secondary w-100 py-2">C++</span></div>
+                                        <div class="col"><span class="badge bg-secondary w-100 py-2">Ruby</span></div>
+                                        <div class="col"><span class="badge bg-secondary w-100 py-2">PHP</span></div>
+                                        <div class="col"><span class="badge bg-secondary w-100 py-2">Go</span></div>
+                                        <div class="col"><span class="badge bg-secondary w-100 py-2">TypeScript</span></div>
+                                        <div class="col"><span class="badge bg-secondary w-100 py-2">C#</span></div>
+                                    </div>
+                                    <p>Each language includes syntax highlighting, auto-completion, and language-specific features.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-dark text-light border-secondary">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix">
+                                    What happens if two people edit the same line?
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFeatures">
+                                <div class="accordion-body">
+                                    <p>Our editor uses Operational Transformation (OT) to handle concurrent edits:</p>
+                                    <ul>
+                                        <li>Changes from multiple users are merged intelligently</li>
+                                        <li>No edit is lost during conflicts</li>
+                                        <li>The system maintains document consistency across all users</li>
+                                        <li>You'll see other users' cursors in real-time to avoid conflicts</li>
+                                    </ul>
+                                    <p>This technology is similar to what powers Google Docs and other collaborative tools.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <h3 class="h4 text-primary mb-3">Account & Billing</h3>
+                    <div class="accordion" id="accordionAccount">
+                        <div class="accordion-item bg-dark text-light border-secondary">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven">
+                                    How do I upgrade my subscription?
+                                </button>
+                            </h2>
+                            <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionAccount">
+                                <div class="accordion-body">
+                                    <p>To upgrade your subscription:</p>
+                                    <ol>
+                                        <li>Log in to your account</li>
+                                        <li>Go to "Account Settings"</li>
+                                        <li>Select "Subscription"</li>
+                                        <li>Choose your desired plan</li>
+                                        <li>Follow the payment instructions</li>
+                                    </ol>
+                                    <p>Your account will be upgraded immediately after successful payment processing.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-dark text-light border-secondary">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight">
+                                    Can I execute code directly in the editor?
+                                </button>
+                            </h2>
+                            <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionAccount">
+                                <div class="accordion-body">
+                                    <p>Yes, you can execute code directly in the editor:</p>
+                                    <ul>
+                                        <li>Use the "Run" button to execute your code</li>
+                                        <li>Results appear in the integrated console</li>
+                                        <li>All users can see the execution results</li>
+                                        <li>Execution happens in a sandboxed environment for security</li>
+                                        <li>Support for multiple runtimes based on your language</li>
+                                    </ul>
+                                    <p>Code execution is available for all supported programming languages.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-primary">View All FAQs</a>
+            </div>
         </div>
-        <div class="footer-section">
-            <h3>Resources</h3>
-            <ul>
-                <li><a href="#">Documentation</a></li>
-                <li><a href="#">API Reference</a></li>
-                <li><a href="#">Community</a></li>
-            </ul>
+    </section>
+
+    <!-- Troubleshooting Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5"><i class="fas fa-tools text-primary me-2"></i>Troubleshooting Guide</h2>
+        
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card bg-dark border-secondary h-100">
+                        <div class="card-header bg-dark text-primary">
+                            <h3 class="h5 mb-0">Connection Issues</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex mb-3">
+                                <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white me-3" style="width: 30px; height: 30px;">1</div>
+                                <div>
+                                    <h4 class="h6 text-white">Check Network Connection</h4>
+                                    <p class="text-light">Ensure you have a stable internet connection. Try loading other websites to verify.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white me-3" style="width: 30px; height: 30px;">2</div>
+                                <div>
+                                    <h4 class="h6 text-white">WebSocket Connectivity</h4>
+                                    <p class="text-light">Make sure your network allows WebSocket connections (port 443). Some corporate firewalls may block these.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white me-3" style="width: 30px; height: 30px;">3</div>
+                                <div>
+                                    <h4 class="h6 text-white">Browser Compatibility</h4>
+                                    <p class="text-light">Use the latest version of Chrome, Firefox, Safari, or Edge for optimal performance.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-6">
+                    <div class="card bg-dark border-secondary h-100">
+                        <div class="card-header bg-dark text-primary">
+                            <h3 class="h5 mb-0">Editor Performance</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex mb-3">
+                                <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white me-3" style="width: 30px; height: 30px;">1</div>
+                                <div>
+                                    <h4 class="h6 text-white">Clear Browser Cache</h4>
+                                    <p class="text-light">Clearing your browser cache can resolve many performance issues.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white me-3" style="width: 30px; height: 30px;">2</div>
+                                <div>
+                                    <h4 class="h6 text-white">Limit File Size</h4>
+                                    <p class="text-light">Very large files (>1MB) may cause performance issues. Consider splitting into multiple files.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white me-3" style="width: 30px; height: 30px;">3</div>
+                                <div>
+                                    <h4 class="h6 text-white">Reduce Active Users</h4>
+                                    <p class="text-light">For optimal performance, we recommend limiting active collaborators to 15 per session.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="footer-section">
-            <h3>Company</h3>
-            <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5 bg-darker" id="contact">
+        <div class="container">
+            <h2 class="text-center mb-5"><i class="fas fa-headset text-primary me-2"></i>Contact Support</h2>
+            
+            <div class="row g-4">
+                <div class="col-lg-5">
+                    <div class="card bg-dark border-secondary h-100">
+                        <div class="card-body">
+                            <h3 class="h4 mb-4">Get in Touch</h3>
+                            <p class="text-muted mb-4">Our support team is available 24/7 to assist you with any questions or issues.</p>
+                            
+                            <div class="d-flex mb-4">
+                                <div class="flex-shrink-0">
+                                    <div class="bg-primary bg-gradient rounded-circle p-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                        <i class="fas fa-envelope text-white"></i>
+                                    </div>
+                                </div>
+                                <div class="ms-3">
+                                    <h4 class="h5">Email Support</h4>
+                                    <p class="mb-0"><a href="mailto:support@collabcode.com" class="text-decoration-none">support@collabcode.com</a></p>
+                                    <p class="text-muted small">Response within 24 hours</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex mb-4">
+                                <div class="flex-shrink-0">
+                                    <div class="bg-primary bg-gradient rounded-circle p-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                        <i class="fas fa-phone-alt text-white"></i>
+                                    </div>
+                                </div>
+                                <div class="ms-3">
+                                    <h4 class="h5">Phone Support</h4>
+                                    <p class="mb-0"><a href="tel:+12345678900" class="text-decoration-none">+1 234 567 8900</a></p>
+                                    <p class="text-muted small">Available Mon-Fri, 9am-5pm EST</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <div class="bg-primary bg-gradient rounded-circle p-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                        <i class="fas fa-comment-dots text-white"></i>
+                                    </div>
+                                </div>
+                                <div class="ms-3">
+                                    <h4 class="h5">Live Chat</h4>
+                                    <p class="mb-0">Available directly from your dashboard</p>
+                                    <p class="mt-2"><a href="dashboard.html" class="btn btn-sm btn-outline-primary">Go to Dashboard</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7" id="ticket-form">
+                    <div class="card bg-dark border-secondary">
+                        <div class="card-body">
+                            <h3 class="h4 mb-4">Submit a Support Ticket</h3>
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="name" class="form-label">Full Name</label>
+                                        <input type="text" class="form-control bg-dark text-light border-secondary" id="name" placeholder="Enter your name  class="form-control bg-dark text-light border-secondary" id="name" placeholder="Enter your name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">Email Address</label>
+                                        <input type="email" class="form-control bg-dark text-light border-secondary" id="email" placeholder="Enter your email" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="issue-type" class="form-label">Issue Type</label>
+                                        <select id="issue-type" class="form-select bg-dark text-light border-secondary" required>
+                                            <option value="" disabled selected>Select issue type</option>
+                                            <option value="connection">Connection Issues</option>
+                                            <option value="collaboration">Collaboration Problems</option>
+                                            <option value="account">Account Management</option>
+                                            <option value="billing">Billing Questions</option>
+                                            <option value="feature">Feature Request</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="subject" class="form-label">Subject</label>
+                                        <input type="text" class="form-control bg-dark text-light border-secondary" id="subject" placeholder="Brief description of your issue" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label">Detailed Description</label>
+                                        <textarea id="message" class="form-control bg-dark text-light border-secondary" rows="5" placeholder="Please provide as much detail as possible..." required></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="file" class="form-label">Attachments (Optional)</label>
+                                        <input type="file" class="form-control bg-dark text-light border-secondary" id="file" multiple>
+                                        <div class="form-text text-muted">You can attach screenshots or log files (Max 5MB)</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary">Submit Ticket</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="footer-section">
-            <p>&copy; 2025 Collab Code Editor</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white text-center">
+        <div class="container">
+            <h2 class="mb-3">Still Need Help?</h2>
+            <p class="lead mb-4">Join our developer community to get help from other users or schedule a one-on-one session with our support engineers.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="#" class="btn btn-light text-primary">Join Community</a>
+                <a href="#" class="btn btn-outline-light">Schedule Call</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark border-top border-secondary">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-code me-2 text-primary"></i>
+                        <span class="fs-4 fw-bold">Collab Code</span>
+                    </div>
+                    <p class="text-muted mb-3">Real-time collaborative code editor for teams built on the MERN stack.</p>
+                    <div class="d-flex gap-3 mb-3">
+                        <a href="#" class="text-decoration-none text-muted"><i class="fab fa-github fs-5"></i></a>
+                        <a href="#" class="text-decoration-none text-muted"><i class="fab fa-twitter fs-5"></i></a>
+                        <a href="#" class="text-decoration-none text-muted"><i class="fab fa-linkedin fs-5"></i></a>
+                        <a href="#" class="text-decoration-none text-muted"><i class="fab fa-youtube fs-5"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h5 class="text-white mb-3">Product</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Features</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Pricing</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Roadmap</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Beta Program</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h5 class="text-white mb-3">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Documentation</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">API Reference</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Community</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Tutorials</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h5 class="text-white mb-3">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Careers</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h5 class="text-white mb-3">Legal</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Terms of Service</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Cookie Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 border-secondary">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <p class="text-muted mb-3 mb-md-0">&copy; 2025 Collab Code Editor. All rights reserved.</p>
+                <div class="d-flex gap-3">
+                    <a href="#" class="text-decoration-none text-muted small">Status</a>
+                    <a href="#" class="text-decoration-none text-muted small">Sitemap</a>
+                    <a href="#" class="text-decoration-none text-muted small">Accessibility</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', function() {
-                    this.parentElement.classList.toggle('active');
-                });
-            });
-        });
-    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --bs-primary: #4f46e5;
+            --bs-primary-rgb: 79, 70, 229;
+        }
+        
+        .bg-darker {
+            background-color: #181818;
+        }
+        
+        .bg-gradient {
+            background: linear-gradient(135deg, #4f46e5, #10b981);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        
+        .hover-card {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(79, 70, 229, 0.1);
+            color: #fff;
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(79, 70, 229, 0.5);
+        }
+        
+        .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+        
+        /* Form controls */
+        .form-control:focus, .form-select:focus {
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 0.25rem rgba(79, 70, 229, 0.25);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #1e1e1e;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #3d3d3d;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4f46e5;
+        }
+
+        /* Improve text visibility */
+        .text-muted {
+            color: #a0a0a0 !important;
+        }
+    </style>
 </body>
 </html>
 
