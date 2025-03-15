@@ -1,7 +1,7 @@
 /* Base Styles & Variables */
 :root {
-    --primary-color: #4f46e5;
-    --primary-hover: #4338ca;
+    --primary-color: #61dafb;
+    --primary-hover: #63c6e1;
     --secondary-color: #10b981;
     --secondary-hover: #059669;
     --text-color: #1f2937;
@@ -22,8 +22,8 @@
   
   /* Dark Mode Variables */
   body.dark {
-    --primary-color: #6366f1;
-    --primary-hover: #818cf8;
+    --primary-color: #63c6e1;
+    --primary-hover: #61dafb;
     --text-color: #f9fafb;
     --text-light: #d1d5db;
     --bg-color: #111827;
@@ -222,7 +222,7 @@
   }
   
   nav ul li a.active {
-    background-color: #4f46e5;
+    background-color: #61dafb;
   }
   
   nav ul li.dropdown {
@@ -345,7 +345,7 @@
   
   .support-card i {
     font-size: 2em;
-    color: #4f46e5;
+    color: #61dafb;
     margin-bottom: 15px;
   }
   
@@ -685,12 +685,12 @@
   
   .contact-method i {
     font-size: 2em;
-    color: #4f46e5;
+    color: #61dafb;
     margin-bottom: 15px;
   }
   
   .contact-method a {
-    color: #4f46e5;
+    color: #61dafb;
     text-decoration: none;
   }
   
