@@ -1020,10 +1020,6 @@ body {
     }
   
     .footer-grid {
-<<<<<<< HEAD
-        grid-template-columns: 1fr 1fr;
-    } }
-=======
       grid-template-columns: 1fr 1fr;
     }
   
@@ -1049,4 +1045,3 @@ body {
   }
   
   
->>>>>>> 91e5a37eff534610c3db4e2bc0fcae14e2defc95
