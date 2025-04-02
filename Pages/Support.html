@@ -7,11 +7,60 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="support.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .navbar {
+            background-color: #1a1a1a;
+        }
+        .navbar-nav .nav-link {
+            color: #e0e0e0 !important;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #61dafb !important;
+        }
+        footer {
+            background-color: #1a1a1a;
+            color: #a0a0a0;
+        }
+        footer a {
+            color: #61dafb;
+        }
+        footer a:hover {
+            color: #ffffff;
+        }
+        .card {
+            background-color: #1a1a1a;
+            border-color: #3d3d3d;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+        .btn:hover {
+            background-color: #61dafb;
+            color: #ffffff;
+            border-color: #61dafb;
+        }
+        .text-muted {
+            color: #a0a0a0 !important;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(79, 70, 229, 0.1);
+            color: #fff;
+        }
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(79, 70, 229, 0.5);
+        }
+    </style>
 </head>
 <body class="bg-dark text-light">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
                 <i class="fas fa-code me-2 text-primary"></i>
                 <span>Collab Code</span>
             </a>
@@ -19,39 +68,26 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Products.html">Products</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="features.html">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="community.html">Community</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Resources
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="docs.html">Documentation</a></li>
-                            <li><a class="dropdown-item" href="tutorials.html">Tutorials</a></li>
-                            <li><a class="dropdown-item" href="api.html">API Reference</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="community.html">Community</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="pricing.html">Pricing</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="support.html">Support</a>
+                        <a class="nav-link" href="Community.html">Community</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Support.html">Support</a>
                     </li>
                 </ul>
-                <div class="d-flex">
-                    <a href="login.html" class="btn btn-outline-light me-2">Login</a>
-                    <a href="signup.html" class="btn btn-primary">Sign Up</a>
-                </div>
             </div>
         </div>
     </nav>
@@ -707,6 +743,25 @@
         /* Improve text visibility */
         .text-muted {
             color: #a0a0a0 !important;
+        }
+
+        .btn:hover {
+            background-color: var(--bs-primary);
+            color: #fff;
+            border-color: var(--bs-primary);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar-dark .nav-link:hover {
+            color: var(--bs-primary);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--bs-primary);
         }
     </style>
 </body>

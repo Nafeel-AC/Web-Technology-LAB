@@ -9,13 +9,52 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <!-- Custom CSS -->
-     <link rel="stylesheet" href="../Css Files/Community.css">
+    <link rel="stylesheet" href="../Css Files/Community.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .navbar {
+            background-color: #1a1a1a;
+        }
+        .navbar-nav .nav-link {
+            color: #e0e0e0 !important;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #61dafb !important;
+        }
+        footer {
+            background-color: #1a1a1a;
+            color: #a0a0a0;
+        }
+        footer a {
+            color: #61dafb;
+        }
+        footer a:hover {
+            color: #ffffff;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn:hover {
+            background-color: #61dafb;
+            color: #ffffff;
+            border-color: #61dafb;
+        }
+
+        footer ul li a:hover {
+            color: var(--bs-primary);
+        }
+    </style>
 </head>
 <body class="bg-dark">
     <!-- Header with Bootstrap Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top shadow-lg border-bottom border-dark">
         <div class="container">
-            <a class="navbar-brand fw-bold text-primary" href="#"> <!-- Updated to blue -->
+            <a class="navbar-brand fw-bold text-primary" href="#">
                 <i class="bi bi-code-slash me-2"></i>CodeCollab
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,19 +63,22 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active px-3" href="../index.html">Home</a>
+                        <a class="nav-link" href="../index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3" href="#community">Community</a>
+                        <a class="nav-link active" href="#community">Community</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3" href="./features.html">Features</a>
+                        <a class="nav-link" href="./features.html">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3" href="./Products.html">Products</a>
+                        <a class="nav-link" href="./Products.html">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3" href="./Support.html">Support</a>
+                        <a class="nav-link" href="./pricing.html">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Support.html">Support</a>
                     </li>
                 </ul>
             </div>
@@ -63,7 +105,7 @@
                         <div class="row align-items-center">
                             <div class="col-lg-6 mb-4 mb-lg-0">
                                 <div class="rounded-4 overflow-hidden hover-scale">
-                                    <img src="community_image.jpg" alt="Community Image" class="img-fluid rounded-4">
+                                    <img src="https://images.unsplash.com/photo-1593642634367-d91a135587b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Community Collaboration" class="img-fluid rounded-4">
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -85,10 +127,8 @@
                 <div class="row g-4">
                     <div class="col-md-4">
                         <div class="card bg-dark h-100 border-0 rounded-4 shadow-lg hover-lift">
+                            <img src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Collaborate" class="card-img-top rounded-top-4">
                             <div class="card-body p-4 text-center">
-                                <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 100px; height: 100px;"> <!-- Updated to blue -->
-                                    <img src="collaborate_icon.png" alt="Collaborate" width="50" height="50">
-                                </div>
                                 <h3 class="card-title h4 mb-3 text-primary">Collaborate</h3> <!-- Updated to blue -->
                                 <p class="card-text text-light">Work on projects with developers from around the world and build amazing things together.</p>
                             </div>
@@ -96,10 +136,8 @@
                     </div>
                     <div class="col-md-4">
                         <div class="card bg-dark h-100 border-0 rounded-4 shadow-lg hover-lift">
+                            <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Learn" class="card-img-top rounded-top-4">
                             <div class="card-body p-4 text-center">
-                                <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 100px; height: 100px;"> <!-- Updated to blue -->
-                                    <img src="learn_icon.png" alt="Learn" width="50" height="50">
-                                </div>
                                 <h3 class="card-title h4 mb-3 text-primary">Learn</h3> <!-- Updated to blue -->
                                 <p class="card-text text-light">Access tutorials, workshops, and resources to improve your coding skills.</p>
                             </div>
@@ -107,10 +145,8 @@
                     </div>
                     <div class="col-md-4">
                         <div class="card bg-dark h-100 border-0 rounded-4 shadow-lg hover-lift">
+                            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Network" class="card-img-top rounded-top-4">
                             <div class="card-body p-4 text-center">
-                                <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 100px; height: 100px;"> <!-- Updated to blue -->
-                                    <img src="network_icon.png" alt="Network" width="50" height="50">
-                                </div>
                                 <h3 class="card-title h4 mb-3 text-primary">Network</h3> <!-- Updated to blue -->
                                 <p class="card-text text-light">Connect with like-minded developers and expand your professional network.</p>
                             </div>
@@ -168,24 +204,28 @@
                 <div class="row g-4 text-center">
                     <div class="col-md-3 col-6">
                         <div class="p-4 rounded-4 bg-dark hover-lift">
+                            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=100" alt="Community Members" class="mb-3 rounded-circle">
                             <h2 class="display-4 fw-bold text-primary">10k+</h2> <!-- Updated to blue -->
                             <p class="text-light mb-0">Community Members</p>
                         </div>
                     </div>
                     <div class="col-md-3 col-6">
                         <div class="p-4 rounded-4 bg-dark hover-lift">
+                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=100" alt="Projects Completed" class="mb-3 rounded-circle">
                             <h2 class="display-4 fw-bold text-primary">500+</h2> <!-- Updated to blue -->
                             <p class="text-light mb-0">Projects Completed</p>
                         </div>
                     </div>
                     <div class="col-md-3 col-6">
                         <div class="p-4 rounded-4 bg-dark hover-lift">
+                            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=100" alt="Countries" class="mb-3 rounded-circle">
                             <h2 class="display-4 fw-bold text-primary">50+</h2> <!-- Updated to blue -->
                             <p class="text-light mb-0">Countries</p>
                         </div>
                     </div>
                     <div class="col-md-3 col-6">
                         <div class="p-4 rounded-4 bg-dark hover-lift">
+                            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=100" alt="Support" class="mb-3 rounded-circle">
                             <h2 class="display-4 fw-bold text-primary">24/7</h2> <!-- Updated to blue -->
                             <p class="text-light mb-0">Support</p>
                         </div>
