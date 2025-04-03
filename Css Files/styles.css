@@ -3,8 +3,8 @@ body {
   font-family: "Inter", "Segoe UI", Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #121212;
-  color: #f5f5f5;
+  background-color: #181818; /* Updated to a darker gray */
+  color: #e0e0e0;
   line-height: 1.6;
 }
 
@@ -102,9 +102,9 @@ nav ul li .dropdown-content a:hover {
 .hero {
   text-align: center;
   padding: 80px 20px;
-  background-color: #111;
-  background-image: radial-gradient(circle at 20% 30%, rgba(97, 218, 251, 0.15) 0%, transparent 30%),
-    radial-gradient(circle at 70% 60%, rgba(138, 97, 251, 0.1) 0%, transparent 30%);
+  background-color: #181818; /* Updated to match the darker gray */
+  background-image: radial-gradient(circle at 20% 30%, rgba(97, 218, 251, 0.2) 0%, transparent 30%),
+    radial-gradient(circle at 70% 60%, rgba(138, 97, 251, 0.15) 0%, transparent 30%);
   animation: fadeIn 1s ease-in-out;
 }
 
@@ -237,7 +237,7 @@ nav ul li .dropdown-content a:hover {
 
 /* Footer */
 footer {
-  background-color: #1a1a1a;
+  background-color: #181818; /* Updated to match the darker gray */
   padding: 60px 20px 30px;
   position: relative;
   overflow: hidden;
