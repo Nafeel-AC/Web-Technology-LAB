@@ -14,12 +14,13 @@
         }
         .navbar {
             background-color: #1a1a1a;
+            padding: 15px 30px;
         }
-        .navbar-nav .nav-link {
-            color: #e0e0e0 !important;
+        .navbar-toggler {
+            border-color: rgba(97, 218, 251, 0.5);
         }
-        .navbar-nav .nav-link:hover {
-            color: #61dafb !important;
+        .navbar-toggler-icon {
+            filter: invert(1);
         }
         footer {
             background-color: #1a1a1a;
@@ -35,11 +36,25 @@
             transform: translateY(-5px);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
-
         .learn-more:hover {
             background-color: #61dafb;
             color: #ffffff;
             border-color: #61dafb;
+        }
+        .nav-link {
+            color: #e0e0e0 !important;
+            padding: 0.5rem 1rem !important;
+            margin: 0 0.25rem;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #61dafb !important;
+            background-color: rgba(97, 218, 251, 0.1);
+            border-radius: 4px;
+        }
+        .nav-link.active {
+            color: #61dafb !important;
+            font-weight: 500;
         }
     </style>
 </head>
@@ -51,23 +66,28 @@
             </div>
             <div class="col-6 col-md-9">
                 <nav class="navbar navbar-expand-lg">
-                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-                                    Menu
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="../index.html">Home</a></li>
-                                    <li><a class="dropdown-item active" href="Products.html">Products</a></li>
-                                    <li><a class="dropdown-item" href="features.html">Features</a></li>
-                                    <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
-                                    <li><a class="dropdown-item" href="Community.html">Community</a></li>
-                                    <li><a class="dropdown-item" href="Support.html">Support</a></li>
-                                </ul>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="Products.html">Products</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="features.html">Features</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="pricing.html">Pricing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Community.html">Community</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Support.html">Support</a>
                             </li>
                         </ul>
                     </div>
@@ -91,7 +111,8 @@
                 <div class="product-card h-100">
                     <h3>CodeCollab IDE</h3>
                     <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="IDE Screenshot" class="img-fluid">
-                    <p>Our flagship collaborative integrated development environment.</p>
+                    <p>Our flagship collaborative integrated development environment. Designed for teams to work together in real-time, the IDE offers features like intelligent code completion, debugging tools, and seamless integration with version control systems.</p>
+                    <p>With CodeCollab IDE, you can streamline your development workflow and enhance team productivity. The intuitive interface and powerful features make it the perfect choice for developers of all skill levels.</p>
                     <ul>
                         <li>Real-time collaboration</li>
                         <li>Intelligent code completion</li>
@@ -106,6 +127,7 @@
                     <h3>CodeCollab Version Control</h3>
                     <img src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-4.0.3&auto=format&fit=crop&w=1476&q=80" alt="Version Control System" class="img-fluid">
                     <p>Advanced version control system for teams.</p>
+                    <p>CodeCollab Version Control ensures that your team can manage code changes efficiently and effectively. With features like distributed repositories and branch management, it simplifies collaboration and enhances code quality.</p>
                     <ul>
                         <li>Distributed repositories</li>
                         <li>Branch management</li>
@@ -120,6 +142,7 @@
                     <h3>CodeCollab Cloud</h3>
                     <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Cloud Services" class="img-fluid">
                     <p>Cloud-based development environment.</p>
+                    <p>CodeCollab Cloud provides a scalable and reliable infrastructure for your development needs. With automated deployments and 24/7 availability, it ensures that your projects are always accessible and secure.</p>
                     <ul>
                         <li>Scalable infrastructure</li>
                         <li>Automated deployments</li>
@@ -160,6 +183,8 @@
         </div>
     </footer>
 
-    
+    <!-- Added Bootstrap JS which was missing -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

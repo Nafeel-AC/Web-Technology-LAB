@@ -1043,5 +1043,42 @@ body {
       height: 250px;
     }
   }
-  
-  
+
+  /* Navbar Styles */
+  .navbar {
+    justify-content: flex-end; /* Align menu to the right */
+    background-color: #1a1a1a;
+  }
+
+  .navbar-toggler {
+    border-color: #61dafb;
+  }
+
+  .navbar-toggler-icon {
+    background-color: #61dafb;
+    border-radius: 5px;
+  }
+
+  .navbar-nav .nav-link {
+    color: #e0e0e0 !important;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #61dafb !important;
+  }
+
+  .dropdown-menu {
+    background-color: #2d2d2d;
+    border: 1px solid rgba(97, 218, 251, 0.3);
+  }
+
+  .dropdown-item {
+    color: #ffffff;
+  }
+
+  .dropdown-item:hover {
+    background-color: #61dafb;
+    color: #000000;
+  }
+
+
