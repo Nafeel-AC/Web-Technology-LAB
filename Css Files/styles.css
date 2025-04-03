@@ -1,4 +1,4 @@
-/* Base Styles */
+/* Base Styles: Agreed upon by the team to ensure consistency */
 body {
   font-family: "Inter", "Segoe UI", Arial, sans-serif;
   margin: 0;
@@ -8,7 +8,7 @@ body {
   line-height: 1.6;
 }
 
-/* Header */
+/* Header: Designed to provide a clean and professional look */
 header {
   background-color: #1d1d1d;
   padding: 15px 30px;
@@ -23,7 +23,7 @@ header {
   text-shadow: 0 0 10px rgba(97, 218, 251, 0.5);
 }
 
-/* Navigation */
+/* Navigation: Collaborative effort to ensure smooth navigation */
 nav ul {
   list-style-type: none;
   margin: 0;
@@ -98,7 +98,7 @@ nav ul li .dropdown-content a:hover {
   }
 }
 
-/* Hero Section */
+/* Hero Section: Designed to grab attention and set the tone */
 .hero {
   text-align: center;
   padding: 80px 20px;
@@ -235,7 +235,7 @@ nav ul li .dropdown-content a:hover {
   margin-top: 5px;
 }
 
-/* Footer */
+/* Footer: A collaborative effort to ensure accessibility */
 footer {
   background-color: #181818; /* Updated to match the darker gray */
   padding: 60px 20px 30px;
@@ -312,7 +312,7 @@ footer {
   color: #61dafb;
 }
 
-/* Responsive Design */
+/* Responsive Design: Ensures compatibility across devices */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2.2em;
