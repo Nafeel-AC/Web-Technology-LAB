@@ -13,6 +13,7 @@
         body {
             background-color: #181818; /* Updated to a darker gray */
             color: #e0e0e0;
+            scroll-behavior: smooth; /* Enable smooth scrolling for the entire page */
         }
         .navbar {
             background-color: #1a1a1a;
@@ -36,6 +37,7 @@
         .card {
             background-color: #1a1a1a;
             border-color: #3d3d3d;
+            transition: all 0.3s ease;
         }
         .card:hover {
             transform: translateY(-5px);
@@ -56,6 +58,90 @@
         .accordion-button:focus {
             box-shadow: none;
             border-color: rgba(79, 70, 229, 0.5);
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 0.6s ease-in-out;
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 0.6s ease-in-out;
+        }
+        
+        .bounce-in {
+            animation: bounceIn 0.8s ease;
+        }
+        
+        /* Form validation styles */
+        .form-control.is-invalid,
+        .form-select.is-invalid {
+            border-color: #dc3545;
+            background-image: none;
+        }
+        
+        .invalid-feedback {
+            color: #ff6b6b;
+            font-size: 0.875rem;
+        }
+        
+        /* Scroll to top button */
+        #scrollTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #4f46e5;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        
+        #scrollTopBtn:hover {
+            opacity: 1;
+        }
+        
+        /* Success message */
+        .success-message {
+            display: none;
+            background-color: rgba(25, 135, 84, 0.2);
+            border-left: 4px solid #198754;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideInRight {
+            from { transform: translateX(50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideInLeft {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes bounceIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); opacity: 1; }
         }
     </style>
 </head>
@@ -156,7 +242,7 @@
                             </div>
                             <h3 class="card-title h5">Submit a Ticket</h3>
                             <p class="card-text text-muted">Get personalized support</p>
-                            <a href="#ticket-form" class="btn btn-outline-primary mt-2">Create Ticket</a>
+                            <a href="#ticket-form" class="btn btn-outline-primary mt-2 smooth-scroll">Create Ticket</a>
                         </div>
                     </div>
                 </div>
@@ -546,18 +632,20 @@
                 </div>
                 
                 <div class="col-lg-7" id="ticket-form">
-                    <div class="card bg-dark border-secondary">
+                    <div class="card bg-dark border-secondary slide-in-right">
                         <div class="card-body">
                             <h3 class="h4 mb-4">Submit a Support Ticket</h3>
-                            <form>
+                            <form id="supportForm" novalidate>
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <label for="name" class="form-label">Full Name</label>
-                                        <input type="text" class="form-control bg-dark text-light border-secondary" id="name" placeholder="Enter your name  class="form-control bg-dark text-light border-secondary" id="name" placeholder="Enter your name" required>
+                                        <input type="text" class="form-control bg-dark text-light border-secondary" id="name" placeholder="Enter your name" required>
+                                        <div class="invalid-feedback">Please enter your full name.</div>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="email" class="form-label">Email Address</label>
                                         <input type="email" class="form-control bg-dark text-light border-secondary" id="email" placeholder="Enter your email" required>
+                                        <div class="invalid-feedback">Please enter a valid email address.</div>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="issue-type" class="form-label">Issue Type</label>
@@ -570,25 +658,55 @@
                                             <option value="feature">Feature Request</option>
                                             <option value="other">Other</option>
                                         </select>
+                                        <div class="invalid-feedback">Please select an issue type.</div>
                                     </div>
                                     <div class="col-md-6">
+                                        <label for="priority" class="form-label">Priority</label>
+                                        <select id="priority" class="form-select bg-dark text-light border-secondary" required>
+                                            <option value="" disabled selected>Select priority</option>
+                                            <option value="low">Low</option>
+                                            <option value="medium">Medium</option>
+                                            <option value="high">High</option>
+                                            <option value="critical">Critical</option>
+                                        </select>
+                                        <div class="invalid-feedback">Please select a priority level.</div>
+                                    </div>
+                                    <div class="col-md-12">
                                         <label for="subject" class="form-label">Subject</label>
                                         <input type="text" class="form-control bg-dark text-light border-secondary" id="subject" placeholder="Brief description of your issue" required>
+                                        <div class="invalid-feedback">Please provide a subject for your ticket.</div>
                                     </div>
                                     <div class="col-12">
                                         <label for="message" class="form-label">Detailed Description</label>
-                                        <textarea id="message" class="form-control bg-dark text-light border-secondary" rows="5" placeholder="Please provide as much detail as possible..." required></textarea>
+                                        <textarea id="message" class="form-control bg-dark text-light border-secondary" rows="5" placeholder="Please provide as much detail as possible..." required minlength="20"></textarea>
+                                        <div class="invalid-feedback">Please provide a detailed description (at least 20 characters).</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="terms" required>
+                                            <label class="form-check-label" for="terms">
+                                                I agree to the <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">terms and conditions</a>
+                                            </label>
+                                            <div class="invalid-feedback">
+                                                You must agree to the terms and conditions.
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="col-12">
                                         <label for="file" class="form-label">Attachments (Optional)</label>
                                         <input type="file" class="form-control bg-dark text-light border-secondary" id="file" multiple>
                                         <div class="form-text text-muted">You can attach screenshots or log files (Max 5MB)</div>
                                     </div>
-                                    <div class="col-12">
-                                        <button type="submit" class="btn btn-primary">Submit Ticket</button>
+                                    <div class="col-12 text-center">
+                                        <button type="submit" class="btn btn-primary px-4 py-2">Submit Ticket</button>
+                                        <button type="reset" class="btn btn-outline-secondary px-4 py-2 ms-2">Reset Form</button>
                                     </div>
                                 </div>
                             </form>
+                            <div id="formSuccess" class="success-message mt-3">
+                                <h5><i class="fas fa-check-circle me-2"></i>Ticket Submitted Successfully!</h5>
+                                <p class="mb-0">Thank you for contacting us. Our support team will review your ticket and respond shortly. You will receive a confirmation email with your ticket details.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -609,6 +727,52 @@
     </section>
 
     <!-- Footer: A collaborative effort to ensure all links are accessible -->
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+    
+    <!-- Terms and Conditions Modal -->
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header border-bottom border-secondary">
+                    <h5 class="modal-title" id="termsModalLabel">Terms and Conditions</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>1. Support Ticket Agreement</h6>
+                    <p>By submitting a support ticket, you acknowledge that:</p>
+                    <ul>
+                        <li>The information provided is accurate to the best of your knowledge</li>
+                        <li>You have permission to share any files or screenshots attached</li>
+                        <li>Our support team may need to access your account to resolve the issue</li>
+                        <li>Response times vary based on ticket priority and support queue</li>
+                    </ul>
+                    
+                    <h6>2. Privacy Policy</h6>
+                    <p>Information submitted through this form is subject to our Privacy Policy:</p>
+                    <ul>
+                        <li>We collect and process personal data only for support purposes</li>
+                        <li>Your information will not be shared with third parties without consent</li>
+                        <li>Support conversations may be recorded for quality assurance</li>
+                        <li>You have the right to request deletion of your support history</li>
+                    </ul>
+                    
+                    <h6>3. Communication</h6>
+                    <p>By submitting this form, you agree to receive:</p>
+                    <ul>
+                        <li>Email notifications regarding your support ticket</li>
+                        <li>Follow-up communications to ensure issue resolution</li>
+                        <li>Occasional surveys to improve our support services</li>
+                    </ul>
+                </div>
+                <div class="modal-footer border-top border-secondary">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="acceptTerms">I Accept</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <footer class="py-5 bg-dark border-top border-secondary">
         <div class="container">
             <div class="row g-4">
@@ -676,6 +840,196 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript for interactive features -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add animation classes on page load
+            document.querySelectorAll('.card:not(.slide-in-right):not(.slide-in-left)').forEach(function(card, index) {
+                setTimeout(function() {
+                    card.classList.add('fade-in');
+                }, index * 100);
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]:not([data-bs-toggle])').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        // Scroll to the element
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                        
+                        // Add a highlight animation
+                        setTimeout(function() {
+                            targetElement.classList.add('bounce-in');
+                            setTimeout(function() {
+                                targetElement.classList.remove('bounce-in');
+                            }, 1000);
+                        }, 500);
+                    }
+                });
+            });
+            
+            // Scroll to top button functionality
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            
+            // Show/hide button based on scroll position
+            window.onscroll = function() {
+                if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                    scrollTopBtn.style.display = 'block';
+                } else {
+                    scrollTopBtn.style.display = 'none';
+                }
+            };
+            
+            // Scroll to top when button is clicked
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Form validation
+            const supportForm = document.getElementById('supportForm');
+            const formSuccess = document.getElementById('formSuccess');
+            
+            if (supportForm) {
+                // Terms and conditions modal interaction
+                document.getElementById('acceptTerms').addEventListener('click', function() {
+                    document.getElementById('terms').checked = true;
+                    supportForm.classList.remove('was-validated');
+                });
+                
+                supportForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    
+                    // Custom validation
+                    let isValid = true;
+                    const nameInput = document.getElementById('name');
+                    const emailInput = document.getElementById('email');
+                    const issueTypeSelect = document.getElementById('issue-type');
+                    const prioritySelect = document.getElementById('priority');
+                    const subjectInput = document.getElementById('subject');
+                    const messageTextarea = document.getElementById('message');
+                    const termsCheckbox = document.getElementById('terms');
+                    
+                    // Reset previous validation
+                    supportForm.querySelectorAll('.is-invalid').forEach(el => {
+                        el.classList.remove('is-invalid');
+                    });
+                    
+                    // Validate name (required)
+                    if (!nameInput.value.trim()) {
+                        nameInput.classList.add('is-invalid');
+                        isValid = false;
+                    }
+                    
+                    // Validate email (required and format)
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailInput.value.trim() || !emailRegex.test(emailInput.value)) {
+                        emailInput.classList.add('is-invalid');
+                        isValid = false;
+                    }
+                    
+                    // Validate issue type (required)
+                    if (!issueTypeSelect.value) {
+                        issueTypeSelect.classList.add('is-invalid');
+                        isValid = false;
+                    }
+                    
+                    // Validate priority (required)
+                    if (!prioritySelect.value) {
+                        prioritySelect.classList.add('is-invalid');
+                        isValid = false;
+                    }
+                    
+                    // Validate subject (required)
+                    if (!subjectInput.value.trim()) {
+                        subjectInput.classList.add('is-invalid');
+                        isValid = false;
+                    }
+                    
+                    // Validate message (required and min length)
+                    if (!messageTextarea.value.trim() || messageTextarea.value.length < 20) {
+                        messageTextarea.classList.add('is-invalid');
+                        isValid = false;
+                    }
+                    
+                    // Validate terms (required)
+                    if (!termsCheckbox.checked) {
+                        termsCheckbox.classList.add('is-invalid');
+                        isValid = false;
+                    }
+                    
+                    // If form is valid, show success message with animation
+                    if (isValid) {
+                        // Hide form with fade out
+                        supportForm.style.opacity = '0';
+                        supportForm.style.transition = 'opacity 0.5s';
+                        
+                        setTimeout(function() {
+                            // Show success message
+                            supportForm.style.display = 'none';
+                            formSuccess.style.display = 'block';
+                            formSuccess.classList.add('fade-in');
+                            
+                            // Scroll to success message
+                            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            
+                            // Reset form in background
+                            supportForm.reset();
+                            
+                            // After 5 seconds, hide success and show form again
+                            setTimeout(function() {
+                                formSuccess.style.opacity = '0';
+                                formSuccess.style.transition = 'opacity 0.5s';
+                                
+                                setTimeout(function() {
+                                    formSuccess.style.display = 'none';
+                                    formSuccess.style.opacity = '1';
+                                    supportForm.style.display = 'block';
+                                    supportForm.style.opacity = '1';
+                                }, 500);
+                            }, 5000);
+                        }, 500);
+                    } else {
+                        // Add the was-validated class to show all validation messages
+                        supportForm.classList.add('was-validated');
+                        
+                        // Scroll to the first invalid field
+                        const firstInvalid = supportForm.querySelector('.is-invalid');
+                        if (firstInvalid) {
+                            firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            firstInvalid.focus();
+                        }
+                    }
+                });
+            }
+            
+            // Animate elements when they come into view
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.card:not(.fade-in):not(.slide-in-right):not(.slide-in-left), .accordion-item:not(.fade-in)');
+                
+                elements.forEach(function(element) {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementPosition < windowHeight - 100) {
+                        element.classList.add('fade-in');
+                    }
+                });
+            };
+            
+            // Run on scroll
+            window.addEventListener('scroll', animateOnScroll);
+            // Run once on page load
+            animateOnScroll();
+        });
+    </script>
     
     <!-- Custom CSS -->
     <style>

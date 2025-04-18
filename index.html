@@ -7,65 +7,179 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./Css Files/styles.css">
+    <link rel="stylesheet" href="./css/animations.css">
     <style>
+        :root {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --navbar-bg: #1a1a1a;
+            --footer-bg: #1a1a1a;
+            --footer-text: #a0a0a0;
+            --primary-color: #61dafb;
+            --card-bg: #1e1e1e;
+            --border-color: #333;
+            --hover-bg: rgba(97, 218, 251, 0.1);
+            --transition-speed: 0.3s;
+        }
+        
+        /* Light theme variables */
+        .light-theme {
+            --bg-color: #f5f5f5;
+            --text-color: #333333;
+            --navbar-bg: #ffffff;
+            --footer-bg: #ffffff;
+            --footer-text: #666666;
+            --primary-color: #0d6efd;
+            --card-bg: #ffffff;
+            --border-color: #dee2e6;
+            --hover-bg: rgba(13, 110, 253, 0.1);
+        }
+        
+        /* Force specific elements to change in light theme */
+        .light-theme .navbar {
+            background-color: #ffffff;
+        }
+        
+        .light-theme .accordion-button {
+            background-color: #f8f9fa;
+            color: #333333;
+        }
+        
+        .light-theme .accordion-body {
+            background-color: #ffffff;
+            color: #333333;
+        }
+        
+        .light-theme footer {
+            background-color: #ffffff;
+            color: #666666;
+        }
+        
+        .light-theme .form-control,
+        .light-theme .form-select {
+            background-color: #ffffff;
+            color: #333333;
+            border-color: #ced4da;
+        }
+        
         body {
-            background-color: #121212;
-            color: #e0e0e0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color var(--transition-speed), color var(--transition-speed);
         }
+        
         .navbar {
-            background-color: #1a1a1a;
+            background-color: var(--navbar-bg);
             padding: 15px 30px;
+            transition: background-color var(--transition-speed);
         }
+        
         .navbar-toggler {
             border-color: rgba(97, 218, 251, 0.5);
         }
+        
         .navbar-toggler-icon {
             filter: invert(1);
         }
+        
+        .light-theme .navbar-toggler-icon {
+            filter: none;
+        }
+        
         footer {
-            background-color: #1a1a1a;
-            color: #a0a0a0;
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            transition: background-color var(--transition-speed), color var(--transition-speed);
         }
+        
         footer a {
-            color: #61dafb;
+            color: var(--primary-color);
         }
+        
         footer a:hover {
-            color: #ffffff;
+            color: var(--text-color);
         }
+        
         .btn:hover {
-            background-color: #61dafb;
+            background-color: var(--primary-color);
             color: #ffffff;
-            border-color: #61dafb;
+            border-color: var(--primary-color);
         }
+        
         .nav-link {
-            color: #e0e0e0 !important;
+            color: var(--text-color) !important;
             padding: 0.5rem 1rem !important;
             margin: 0 0.25rem;
-            transition: all 0.3s ease;
+            transition: all var(--transition-speed) ease;
         }
+        
         .nav-link:hover {
-            color: #61dafb !important;
-            background-color: rgba(97, 218, 251, 0.1);
+            color: var(--primary-color) !important;
+            background-color: var(--hover-bg);
             border-radius: 4px;
         }
+        
         .nav-link.active {
-            color: #61dafb !important;
+            color: var(--primary-color) !important;
             font-weight: 500;
+        }
+        
+        .feature-card, .testimonial, .accordion-item {
+            background-color: var(--card-bg);
+            border-color: var(--border-color);
+            transition: all var(--transition-speed);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+        }
+        
+        .light-theme .feature-card,
+        .light-theme .testimonial,
+        .light-theme .accordion-item {
+            background-color: #ffffff;
+            border-color: var(--border-color);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Scroll to top button */
+        #scrollTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        
+        #scrollTopBtn:hover {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
+    <!-- Page transition overlay -->
+    <div class="page-transition"></div>
+    
     <header>
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg sticky-top">
             <div class="container-fluid">
-                <a class="navbar-brand logo" href="#">CodeCollab</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand logo" href="#">
+                    <i class="fas fa-code me-2"></i>CodeCollab
+                </a>
+                <button class="navbar-toggler navbar-toggler-animation" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" href="./index.html">Home</a>
+                            <a class="nav-link" href="./index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./Pages/Products.html">Products</a>
@@ -82,23 +196,148 @@
                         <li class="nav-item">
                             <a class="nav-link" href="./Pages/Support.html">Support</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./Pages/quiz.html">Quiz</a>
+                        </li>
+                        <!-- Theme Toggle Button -->
+                        <li class="nav-item ms-2 d-flex align-items-center">
+                            <button id="themeToggle" class="btn btn-sm btn-outline-light" aria-label="Toggle theme">
+                                <i class="fas fa-moon" id="themeIcon"></i>
+                            </button>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     
+    <!-- Component 1: Carousel -->    
     <section class="hero container-fluid">
         <div class="row justify-content-center text-center">
             <div class="col-md-10 col-lg-8">
                 <h1>Collaborate on Code Like Never Before</h1>
                 <p>Join thousands of developers in a seamless collaborative coding environment.</p>
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Collaboration Illustration" class="img-fluid mt-4 rounded shadow">
+                
+                <!-- Bootstrap Carousel -->                
+                <div id="heroCarousel" class="carousel slide mt-4 animate-on-scroll" data-animation="fade-in" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner rounded shadow">
+                        <div class="carousel-item active">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="d-block w-100" alt="Collaboration">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Team Collaboration</h5>
+                                <p>Work together seamlessly</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="d-block w-100" alt="Productivity">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Boost Productivity</h5>
+                                <p>Streamline your workflow</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="d-block w-100" alt="Innovation">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Drive Innovation</h5>
+                                <p>Create the future together</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                
+                <!-- Component 2: Modal Trigger Button -->
+                <div class="mt-4">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#demoModal">
+                        <i class="fas fa-play-circle me-2"></i>Watch Demo
+                    </button>
+                    
+                    <!-- Button with Tooltip (Component 5) -->
+                    <button type="button" class="btn btn-outline-light ms-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Sign up for a free 14-day trial">
+                        <i class="fas fa-user-plus me-2"></i>Try Free
+                    </button>
+                </div>
             </div>
         </div>
     </section>
     
-    <section class="features container-fluid">
+    <!-- Component 2: Modal -->
+    <div class="modal fade" id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark">
+                <div class="modal-header border-bottom border-secondary">
+                    <h5 class="modal-title" id="demoModalLabel">CodeCollab Demo</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Product Demo" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="modal-footer border-top border-secondary">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Schedule a Live Demo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Component 3: Offcanvas Sidebar Trigger -->
+    <div class="container-fluid mb-4 text-center">
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#featuresOffcanvas" aria-controls="featuresOffcanvas">
+            <i class="fas fa-bars me-2"></i>Explore All Features
+        </button>
+    </div>
+    
+    <!-- Component 3: Offcanvas Sidebar -->
+    <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="featuresOffcanvas" aria-labelledby="featuresOffcanvasLabel">
+        <div class="offcanvas-header border-bottom border-secondary">
+            <h5 class="offcanvas-title" id="featuresOffcanvasLabel">All Features</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="list-group list-group-flush bg-transparent">
+                <a href="#" class="list-group-item list-group-item-action bg-transparent text-light border-secondary">
+                    <i class="fas fa-code me-2"></i>Code Sharing
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent text-light border-secondary">
+                    <i class="fas fa-comments me-2"></i>Real-time Chat
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent text-light border-secondary">
+                    <i class="fas fa-video me-2"></i>Video Meetings
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent text-light border-secondary">
+                    <i class="fas fa-history me-2"></i>Version Control
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent text-light border-secondary">
+                    <i class="fas fa-bug me-2"></i>Issue Tracking
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent text-light border-secondary">
+                    <i class="fas fa-project-diagram me-2"></i>Project Management
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent text-light border-secondary">
+                    <i class="fas fa-lock me-2"></i>Security Features
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent text-light border-secondary">
+                    <i class="fas fa-mobile-alt me-2"></i>Mobile Support
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <section class="features container-fluid animate-on-scroll" data-animation="slide-up">
         <div class="row justify-content-center">
             <div class="col-md-4 mb-4">
                 <div class="feature-card h-100">
@@ -107,6 +346,14 @@
                     </div>
                     <h3>Real-time Collaboration</h3>
                     <p>Experience seamless, real-time coding with your team.</p>
+                    <!-- Component 5: Popover -->
+                    <button type="button" class="btn btn-sm btn-outline-primary mt-2" 
+                            data-bs-toggle="popover" 
+                            data-bs-placement="top" 
+                            data-bs-title="Collaboration Features" 
+                            data-bs-content="Includes cursor tracking, voice chat, and code annotations for seamless teamwork.">
+                        Learn More
+                    </button>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
@@ -116,6 +363,14 @@
                     </div>
                     <h3>Easy Integration</h3>
                     <p>Integrate with your favorite tools and services effortlessly.</p>
+                    <!-- Component 5: Popover -->
+                    <button type="button" class="btn btn-sm btn-outline-primary mt-2" 
+                            data-bs-toggle="popover" 
+                            data-bs-placement="top" 
+                            data-bs-title="Integration Options" 
+                            data-bs-content="Works with GitHub, GitLab, Jira, Slack, and over 50 other tools.">
+                        Learn More
+                    </button>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
@@ -125,12 +380,69 @@
                     </div>
                     <h3>Secure Environment</h3>
                     <p>Your code and data are safe with our top-notch security measures.</p>
+                    <!-- Component 5: Popover -->
+                    <button type="button" class="btn btn-sm btn-outline-primary mt-2" 
+                            data-bs-toggle="popover" 
+                            data-bs-placement="top" 
+                            data-bs-title="Security Features" 
+                            data-bs-content="End-to-end encryption, role-based access control, and regular security audits.">
+                        Learn More
+                    </button>
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="testimonials container-fluid">
+    <!-- Component 4: Accordion -->
+    <section class="faq container-fluid mb-5 animate-on-scroll" data-animation="slide-right">
+        <div class="row justify-content-center text-center">
+            <div class="col-12">
+                <h2 class="mb-4">Frequently Asked Questions</h2>
+            </div>
+            <div class="col-md-8">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item bg-dark text-light border-secondary" style="transition: all 0.3s ease">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                How does real-time collaboration work?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Our real-time collaboration system uses WebSockets to ensure all team members see changes instantly. Multiple developers can work on the same codebase simultaneously, with changes synced in milliseconds. Conflicts are automatically detected and resolved, making team coding seamless and efficient.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bg-dark text-light border-secondary">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Is CodeCollab compatible with my IDE?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes! CodeCollab offers plugins for all major IDEs including VS Code, IntelliJ, Eclipse, and Sublime Text. Our platform is designed to integrate seamlessly with your existing workflow, allowing you to collaborate without changing your preferred development environment.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bg-dark text-light border-secondary">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                How secure is my code on CodeCollab?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Security is our top priority. All code is encrypted both in transit and at rest using industry-standard encryption. We offer private repositories, role-based access controls, and two-factor authentication. Our infrastructure is regularly audited by third-party security experts to ensure your intellectual property remains protected.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials container-fluid animate-on-scroll" data-animation="slide-left">
         <div class="row justify-content-center text-center">
             <div class="col-12">
                 <h2 class="mb-5"><i class="fas fa-quote-left text-primary me-2"></i>What Our Users Say</h2>
@@ -167,6 +479,102 @@
         </div>
     </section>
     
+    <!-- Live Search Feature -->
+    <section class="search-section container-fluid mb-5 animate-on-scroll" data-animation="slide-up">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h2 class="text-center mb-4">Find Resources</h2>
+                <div class="card bg-dark border-secondary">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <div class="input-group">
+                                <span class="input-group-text bg-primary text-white">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                                <input type="text" id="searchInput" class="form-control bg-dark text-light border-secondary" placeholder="Search for resources, tutorials, documentation...">
+                            </div>
+                            <div class="form-text text-muted">Results will appear as you type</div>
+                        </div>
+                        
+                        <div id="searchResults" class="list-group bg-dark">
+                            <!-- Results will be populated here -->
+                        </div>
+                        
+                        <div id="noResults" class="alert alert-secondary d-none">
+                            No matching resources found. Try different keywords or <a href="#" class="alert-link">browse all resources</a>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Quiz Promo Section -->
+    <section class="container-fluid mb-5 animate-on-scroll" data-animation="fade-in">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2 class="mb-4">Test Your Coding Knowledge</h2>
+                <p class="lead mb-4">Challenge yourself with our interactive quiz on collaborative coding concepts and best practices.</p>
+                <a href="./Pages/quiz.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-play-circle me-2"></i>Take the Quiz
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Form Section with Custom Validation -->
+    <section class="contact-form container-fluid mb-5 animate-on-scroll" data-animation="zoom-in">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h2 class="text-center mb-4">Contact Us</h2>
+                <form id="contactForm" novalidate>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control bg-dark text-light border-secondary" id="nameInput" placeholder="Your Name" required>
+                                <label for="nameInput">Your Name</label>
+                                <div class="invalid-feedback">Please enter your name.</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control bg-dark text-light border-secondary" id="emailInput" placeholder="name@example.com" required>
+                                <label for="emailInput">Email Address</label>
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating mb-3">
+                                <select class="form-select bg-dark text-light border-secondary" id="subjectSelect" required>
+                                    <option value="" selected disabled>Select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="support">Technical Support</option>
+                                    <option value="sales">Sales</option>
+                                    <option value="feedback">Feedback</option>
+                                </select>
+                                <label for="subjectSelect">Subject</label>
+                                <div class="invalid-feedback">Please select a subject.</div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control bg-dark text-light border-secondary" id="messageTextarea" placeholder="Your message" style="height: 150px" required></textarea>
+                                <label for="messageTextarea">Your Message</label>
+                                <div class="invalid-feedback">Please enter your message (minimum 10 characters).</div>
+                            </div>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-primary px-4 py-2">Send Message</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="alert alert-success mt-3 d-none" id="formSuccess">
+                    Thank you for your message! We'll get back to you soon.
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <footer class="container-fluid">
         <div class="row">
             <div class="col-md-4 footer-section">
@@ -196,8 +604,285 @@
         </div>
     </footer>
     
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+    
     <!-- Make sure Bootstrap JS is loaded at the end of the body -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Common JavaScript file for all pages -->
+    <script src="./js/main.js"></script>
+    
+    <!-- JavaScript for interactive features -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize tooltips
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+            
+            // Add popovers to feature cards
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+                return new bootstrap.Popover(popoverTriggerEl)
+            })
+            
+            // 1. Live Search Feature Implementation
+            const searchInput = document.getElementById('searchInput');
+            const searchResults = document.getElementById('searchResults');
+            const noResults = document.getElementById('noResults');
+            
+            // Sample data for search (in a real app, this would come from an API or database)
+            const resources = [
+                { title: 'Getting Started with CodeCollab', category: 'Tutorial', url: '#', tags: ['beginner', 'setup', 'introduction'] },
+                { title: 'Advanced Collaboration Techniques', category: 'Guide', url: '#', tags: ['advanced', 'collaboration', 'teams'] },
+                { title: 'Version Control Integration', category: 'Documentation', url: '#', tags: ['git', 'version control', 'integration'] },
+                { title: 'Real-time Editing Features', category: 'Tutorial', url: '#', tags: ['editing', 'real-time', 'features'] },
+                { title: 'Security Best Practices', category: 'Guide', url: '#', tags: ['security', 'best practices', 'encryption'] },
+                { title: 'API Documentation', category: 'Documentation', url: '#', tags: ['api', 'development', 'integration'] },
+                { title: 'Team Management', category: 'Guide', url: '#', tags: ['teams', 'management', 'collaboration'] },
+                { title: 'Code Review Workflow', category: 'Tutorial', url: '#', tags: ['code review', 'workflow', 'quality'] },
+                { title: 'Custom Extensions Development', category: 'Documentation', url: '#', tags: ['extensions', 'development', 'customization'] },
+                { title: 'Keyboard Shortcuts', category: 'Cheatsheet', url: '#', tags: ['shortcuts', 'productivity', 'keyboard'] }
+            ];
+            
+            // Function to perform live search
+            function performSearch(query) {
+                // Clear previous results
+                searchResults.innerHTML = '';
+                
+                if (!query.trim()) {
+                    searchResults.classList.add('d-none');
+                    noResults.classList.add('d-none');
+                    return;
+                }
+                
+                // Filter resources based on query
+                const filteredResources = resources.filter(resource => {
+                    const titleMatch = resource.title.toLowerCase().includes(query.toLowerCase());
+                    const categoryMatch = resource.category.toLowerCase().includes(query.toLowerCase());
+                    const tagMatch = resource.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()));
+                    return titleMatch || categoryMatch || tagMatch;
+                });
+                
+                // Display results or no results message
+                if (filteredResources.length > 0) {
+                    searchResults.classList.remove('d-none');
+                    noResults.classList.add('d-none');
+                    
+                    filteredResources.forEach(resource => {
+                        const resultItem = document.createElement('a');
+                        resultItem.href = resource.url;
+                        resultItem.className = 'list-group-item list-group-item-action bg-dark text-light border-secondary';
+                        
+                        // Highlight matching text
+                        const regex = new RegExp(`(${query})`, 'gi');
+                        const highlightedTitle = resource.title.replace(regex, '<span class="text-primary">$1</span>');
+                        
+                        resultItem.innerHTML = `
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="mb-1">${highlightedTitle}</h6>
+                                <span class="badge bg-primary">${resource.category}</span>
+                            </div>
+                            <div class="small text-muted">
+                                ${resource.tags.map(tag => `<span class="badge bg-secondary me-1">${tag}</span>`).join('')}
+                            </div>
+                        `;
+                        
+                        searchResults.appendChild(resultItem);
+                    });
+                } else {
+                    searchResults.classList.add('d-none');
+                    noResults.classList.remove('d-none');
+                }
+            }
+            
+            // Add event listener for search input
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    performSearch(this.value);
+                });
+            }
+            
+            // Feature 1: Theme Switcher (Dark/Light Mode Toggle)
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = document.getElementById('themeIcon');
+            const htmlElement = document.documentElement;
+            
+            // Function to apply theme changes
+            function applyTheme(isLightTheme) {
+                if (isLightTheme) {
+                    htmlElement.classList.add('light-theme');
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                    themeToggle.classList.remove('btn-outline-light');
+                    themeToggle.classList.add('btn-outline-dark');
+                } else {
+                    htmlElement.classList.remove('light-theme');
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                    themeToggle.classList.remove('btn-outline-dark');
+                    themeToggle.classList.add('btn-outline-light');
+                }
+                
+                // Update modal and offcanvas colors
+                document.querySelectorAll('.modal-content, .offcanvas').forEach(el => {
+                    if (isLightTheme) {
+                        el.classList.remove('bg-dark', 'text-bg-dark');
+                        el.classList.add('bg-light', 'text-bg-light');
+                    } else {
+                        el.classList.remove('bg-light', 'text-bg-light');
+                        el.classList.add('bg-dark', 'text-bg-dark');
+                    }
+                });
+                
+                // Update form inputs
+                document.querySelectorAll('.form-control, .form-select').forEach(el => {
+                    if (isLightTheme) {
+                        el.classList.remove('bg-dark', 'text-light', 'border-secondary');
+                        el.classList.add('bg-white', 'text-dark', 'border-gray');
+                    } else {
+                        el.classList.remove('bg-white', 'text-dark', 'border-gray');
+                        el.classList.add('bg-dark', 'text-light', 'border-secondary');
+                    }
+                });
+                
+                // Update accordion items
+                document.querySelectorAll('.accordion-button').forEach(el => {
+                    if (isLightTheme) {
+                        el.classList.remove('bg-dark', 'text-light');
+                        el.classList.add('bg-light', 'text-dark');
+                    } else {
+                        el.classList.remove('bg-light', 'text-dark');
+                        el.classList.add('bg-dark', 'text-light');
+                    }
+                });
+                
+                document.querySelectorAll('.accordion-item').forEach(el => {
+                    if (isLightTheme) {
+                        el.classList.remove('bg-dark', 'text-light', 'border-secondary');
+                        el.classList.add('bg-light', 'text-dark', 'border-gray');
+                    } else {
+                        el.classList.remove('bg-light', 'text-dark', 'border-gray');
+                        el.classList.add('bg-dark', 'text-light', 'border-secondary');
+                    }
+                });
+                
+                // Update feature cards
+                document.querySelectorAll('.feature-card').forEach(el => {
+                    if (isLightTheme) {
+                        el.style.backgroundColor = '#ffffff';
+                        el.style.boxShadow = '0 0.5rem 1rem rgba(0, 0, 0, 0.15)';
+                    } else {
+                        el.style.backgroundColor = '#1e1e1e';
+                        el.style.boxShadow = '0 0.5rem 1rem rgba(0, 0, 0, 0.5)';
+                    }
+                });
+                
+                // Update testimonial cards
+                document.querySelectorAll('.testimonial').forEach(el => {
+                    if (isLightTheme) {
+                        el.style.backgroundColor = '#ffffff';
+                        el.style.boxShadow = '0 0.5rem 1rem rgba(0, 0, 0, 0.15)';
+                    } else {
+                        el.style.backgroundColor = '#1e1e1e';
+                        el.style.boxShadow = '0 0.5rem 1rem rgba(0, 0, 0, 0.5)';
+                    }
+                });
+            }
+            
+            // Check for saved theme preference or use default dark theme
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                applyTheme(true);
+            }
+            
+            // Toggle theme on button click
+            themeToggle.addEventListener('click', function() {
+                const isLightTheme = !htmlElement.classList.contains('light-theme');
+                applyTheme(isLightTheme);
+                localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
+            });
+            
+            // Feature 2: Scroll to Top Button
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            
+            // Show/hide button based on scroll position
+            window.onscroll = function() {
+                if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                    scrollTopBtn.style.display = 'block';
+                } else {
+                    scrollTopBtn.style.display = 'none';
+                }
+            };
+            
+            // Scroll to top when button is clicked
+            scrollTopBtn.addEventListener('click', function() {
+                // For Safari
+                document.body.scrollTop = 0;
+                // For Chrome, Firefox, IE and Opera
+                document.documentElement.scrollTop = 0;
+            });
+            
+            // Feature 3: Custom Form Validation
+            const contactForm = document.getElementById('contactForm');
+            const formSuccess = document.getElementById('formSuccess');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    
+                    let isValid = true;
+                    const nameInput = document.getElementById('nameInput');
+                    const emailInput = document.getElementById('emailInput');
+                    const subjectSelect = document.getElementById('subjectSelect');
+                    const messageTextarea = document.getElementById('messageTextarea');
+                    
+                    // Reset previous validation
+                    contactForm.querySelectorAll('.is-invalid').forEach(el => {
+                        el.classList.remove('is-invalid');
+                    });
+                    
+                    // Validate name (required)
+                    if (!nameInput.value.trim()) {
+                        nameInput.classList.add('is-invalid');
+                        isValid = false;
+                    }
+                    
+                    // Validate email (required and format)
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailInput.value.trim() || !emailRegex.test(emailInput.value)) {
+                        emailInput.classList.add('is-invalid');
+                        isValid = false;
+                    }
+                    
+                    // Validate subject (required)
+                    if (!subjectSelect.value) {
+                        subjectSelect.classList.add('is-invalid');
+                        isValid = false;
+                    }
+                    
+                    // Validate message (required and min length)
+                    if (!messageTextarea.value.trim() || messageTextarea.value.length < 10) {
+                        messageTextarea.classList.add('is-invalid');
+                        isValid = false;
+                    }
+                    
+                    // If form is valid, show success message
+                    if (isValid) {
+                        contactForm.reset();
+                        formSuccess.classList.remove('d-none');
+                        
+                        // Hide success message after 5 seconds
+                        setTimeout(function() {
+                            formSuccess.classList.add('d-none');
+                        }, 5000);
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
 

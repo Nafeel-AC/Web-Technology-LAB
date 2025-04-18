@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Quiz | CodeCollab</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <style>
+        :root {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --navbar-bg: #1a1a1a;
+            --footer-bg: #1a1a1a;
+            --footer-text: #a0a0a0;
+            --primary-color: #61dafb;
+            --card-bg: #1e1e1e;
+            --border-color: #333;
+            --hover-bg: rgba(97, 218, 251, 0.1);
+            --transition-speed: 0.3s;
+        }
+        
+        /* Light theme variables */
+        .light-theme {
+            --bg-color: #f5f5f5;
+            --text-color: #333333;
+            --navbar-bg: #ffffff;
+            --footer-bg: #ffffff;
+            --footer-text: #666666;
+            --primary-color: #0d6efd;
+            --card-bg: #ffffff;
+            --border-color: #dee2e6;
+            --hover-bg: rgba(13, 110, 253, 0.1);
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+        }
+        
+        .navbar {
+            background-color: var(--navbar-bg);
+            padding: 15px 30px;
+            transition: background-color var(--transition-speed);
+        }
+        
+        .navbar-toggler {
+            border-color: rgba(97, 218, 251, 0.5);
+        }
+        
+        .navbar-toggler-icon {
+            filter: invert(1);
+        }
+        
+        .light-theme .navbar-toggler-icon {
+            filter: none;
+        }
+        
+        footer {
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+        }
+        
+        footer a {
+            color: var(--primary-color);
+        }
+        
+        footer a:hover {
+            color: var(--text-color);
+        }
+        
+        .quiz-card {
+            background-color: var(--card-bg);
+            border-color: var(--border-color);
+            border-radius: 10px;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+            transition: all var(--transition-speed);
+        }
+        
+        .light-theme .quiz-card {
+            background-color: #ffffff;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+        
+        .real-time-clock {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            padding: 8px 15px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        
+        .quiz-progress {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .quiz-timer {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+        
+        .form-check-input:checked {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .result-score {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(97, 218, 251, 0.1);
+            border: 1px solid rgba(97, 218, 251, 0.2);
+        }
+        
+        .light-theme .result-score {
+            background-color: rgba(13, 110, 253, 0.1);
+            border: 1px solid rgba(13, 110, 253, 0.2);
+        }
+        
+        /* Quiz animation */
+        @keyframes questionFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        #questionContainer {
+            animation: questionFadeIn 0.5s ease;
+        }
+        
+        /* Scroll to top button */
+        #scrollTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        
+        #scrollTopBtn:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page transition overlay -->
+    <div class="page-transition"></div>
+    
+    <header>
+        <nav class="navbar navbar-expand-lg sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand logo" href="../index.html">
+                    <i class="fas fa-code me-2"></i>CodeCollab
+                </a>
+                <button class="navbar-toggler navbar-toggler-animation" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Products.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="features.html">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pricing.html">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Community.html">Community</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Support.html">Support</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="quiz.html">Quiz</a>
+                        </li>
+                        <!-- Theme Toggle Button -->
+                        <li class="nav-item ms-2 d-flex align-items-center">
+                            <button id="themeToggle" class="btn btn-sm btn-outline-light" aria-label="Toggle theme">
+                                <i class="fas fa-moon" id="themeIcon"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Quiz Hero Section -->
+    <section class="container-fluid py-5 animate-on-scroll" data-animation="fade-in">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h1 class="display-4 mb-3">Test Your Coding Knowledge</h1>
+                <p class="lead mb-4">Challenge yourself with our interactive quiz on collaborative coding concepts and best practices.</p>
+                <div class="real-time-clock d-inline-block mb-4">
+                    <i class="far fa-clock me-2"></i><span id="currentTime">00:00:00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Quiz Section -->
+    <section class="quiz-section container-fluid mb-5 animate-on-scroll" data-animation="slide-up">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="quiz-card p-4">
+                    <div id="quizContainer">
+                        <div id="quizStart" class="text-center py-4">
+                            <h3 class="mb-3">Ready to Test Your Skills?</h3>
+                            <p class="mb-4">This quick quiz will test your knowledge of collaborative coding concepts. Complete all questions to see your score!</p>
+                            <button id="startQuizBtn" class="btn btn-primary px-4 py-2">
+                                <i class="fas fa-play-circle me-2"></i>Start Quiz
+                            </button>
+                        </div>
+                        
+                        <div id="quizContent" class="d-none">
+                            <div class="d-flex justify-content-between mb-3">
+                                <div class="quiz-progress">
+                                    Question <span id="currentQuestion">1</span> of <span id="totalQuestions">5</span>
+                                </div>
+                                <div class="quiz-timer">
+                                    Time: <span id="quizTimer">00:00</span>
+                                </div>
+                            </div>
+                            
+                            <div id="questionContainer" class="mb-4">
+                                <!-- Questions will be loaded here -->
+                            </div>
+                            
+                            <div class="d-flex justify-content-between">
+                                <button id="prevQuestionBtn" class="btn btn-outline-secondary" disabled>
+                                    <i class="fas fa-arrow-left me-2"></i>Previous
+                                </button>
+                                <button id="nextQuestionBtn" class="btn btn-primary">
+                                    Next<i class="fas fa-arrow-right ms-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div id="quizResults" class="d-none text-center py-4">
+                            <h3 class="mb-3">Quiz Completed!</h3>
+                            <div class="result-score mb-4">
+                                <div class="display-4 text-primary mb-2"><span id="scorePercent">0</span>%</div>
+                                <p>You answered <span id="correctAnswers">0</span> out of <span id="totalAnswers">5</span> questions correctly.</p>
+                            </div>
+                            <div id="timeTaken" class="mb-4">Time taken: 00:00</div>
+                            <button id="restartQuizBtn" class="btn btn-primary px-4 py-2">
+                                <i class="fas fa-redo me-2"></i>Try Again
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Quiz Info Section -->
+    <section class="container-fluid mb-5 animate-on-scroll" data-animation="slide-right">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card bg-dark border-secondary h-100">
+                            <div class="card-body text-center p-4">
+                                <div class="feature-icon bg-primary bg-gradient text-white rounded-circle mb-3">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <h3 class="card-title h5">Test Your Knowledge</h3>
+                                <p class="card-text text-muted">Challenge yourself with questions about collaborative coding concepts.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-dark border-secondary h-100">
+                            <div class="card-body text-center p-4">
+                                <div class="feature-icon bg-primary bg-gradient text-white rounded-circle mb-3">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <h3 class="card-title h5">Track Your Progress</h3>
+                                <p class="card-text text-muted">See your score and time taken to complete the quiz.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-dark border-secondary h-100">
+                            <div class="card-body text-center p-4">
+                                <div class="feature-icon bg-primary bg-gradient text-white rounded-circle mb-3">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <h3 class="card-title h5">Learn & Improve</h3>
+                                <p class="card-text text-muted">Expand your knowledge about collaborative development practices.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">API Reference</a></li>
+                    <li><a href="#">Community Forum</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 footer-section">
+                <h3>Follow Us</h3>
+                <ul class="social-links">
+                    <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Common JavaScript file for all pages -->
+    <script src="../js/main.js"></script>
+    
+    <!-- Quiz JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Real-time Clock Implementation
+            const currentTimeElement = document.getElementById('currentTime');
+            
+            function updateClock() {
+                const now = new Date();
+                const hours = String(now.getHours()).padStart(2, '0');
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+                const seconds = String(now.getSeconds()).padStart(2, '0');
+                
+                if (currentTimeElement) {
+                    currentTimeElement.textContent = `${hours}:${minutes}:${seconds}`;
+                }
+            }
+            
+            // Update clock immediately and then every second
+            if (currentTimeElement) {
+                updateClock();
+                setInterval(updateClock, 1000);
+            }
+            
+            // Quiz Implementation
+            const quizQuestions = [
+                {
+                    question: "What technology is commonly used for real-time collaboration in coding platforms?",
+                    options: ["REST API", "WebSockets", "GraphQL", "SOAP"],
+                    correctAnswer: 1
+                },
+                {
+                    question: "Which of the following is NOT a benefit of collaborative coding?",
+                    options: ["Faster bug detection", "Knowledge sharing", "Reduced need for code reviews", "Improved code quality"],
+                    correctAnswer: 2
+                },
+                {
+                    question: "What is a common feature of collaborative coding platforms?",
+                    options: ["Cursor tracking", "Automatic code generation", "AI pair programming", "Mandatory version control"],
+                    correctAnswer: 0
+                },
+                {
+                    question: "Which version control system is most commonly integrated with collaborative coding platforms?",
+                    options: ["SVN", "Mercurial", "Git", "CVS"],
+                    correctAnswer: 2
+                },
+                {
+                    question: "What security measure is essential for collaborative coding platforms?",
+                    options: ["End-to-end encryption", "Biometric authentication", "Blockchain verification", "Hardware tokens"],
+                    correctAnswer: 0
+                }
+            ];
+            
+            // Quiz elements
+            const startQuizBtn = document.getElementById('startQuizBtn');
+            const quizStart = document.getElementById('quizStart');
+            const quizContent = document.getElementById('quizContent');
+            const quizResults = document.getElementById('quizResults');
+            const questionContainer = document.getElementById('questionContainer');
+            const currentQuestionEl = document.getElementById('currentQuestion');
+            const totalQuestionsEl = document.getElementById('totalQuestions');
+            const prevQuestionBtn = document.getElementById('prevQuestionBtn');
+            const nextQuestionBtn = document.getElementById('nextQuestionBtn');
+            const quizTimer = document.getElementById('quizTimer');
+            const scorePercent = document.getElementById('scorePercent');
+            const correctAnswers = document.getElementById('correctAnswers');
+            const totalAnswers = document.getElementById('totalAnswers');
+            const timeTaken = document.getElementById('timeTaken');
+            const restartQuizBtn = document.getElementById('restartQuizBtn');
+            
+            let currentQuestionIndex = 0;
+            let userAnswers = [];
+            let quizStartTime;
+            let quizTimerInterval;
+            
+            // Initialize quiz
+            if (startQuizBtn) {
+                // Set total questions
+                if (totalQuestionsEl) totalQuestionsEl.textContent = quizQuestions.length;
+                if (totalAnswers) totalAnswers.textContent = quizQuestions.length;
+                
+                // Start quiz button click handler
+                startQuizBtn.addEventListener('click', function() {
+                    startQuiz();
+                });
+                
+                // Previous question button click handler
+                if (prevQuestionBtn) {
+                    prevQuestionBtn.addEventListener('click', function() {
+                        if (currentQuestionIndex > 0) {
+                            currentQuestionIndex--;
+                            showQuestion(currentQuestionIndex);
+                            updateNavButtons();
+                        }
+                    });
+                }
+                
+                // Next question button click handler
+                if (nextQuestionBtn) {
+                    nextQuestionBtn.addEventListener('click', function() {
+                        // Save current answer if selected
+                        const selectedOption = document.querySelector('input[name="quizOption"]:checked');
+                        if (selectedOption) {
+                            userAnswers[currentQuestionIndex] = parseInt(selectedOption.value);
+                        }
+                        
+                        if (currentQuestionIndex < quizQuestions.length - 1) {
+                            currentQuestionIndex++;
+                            showQuestion(currentQuestionIndex);
+                            updateNavButtons();
+                        } else {
+                            finishQuiz();
+                        }
+                    });
+                }
+                
+                // Restart quiz button click handler
+                if (restartQuizBtn) {
+                    restartQuizBtn.addEventListener('click', function() {
+                        resetQuiz();
+                        startQuiz();
+                    });
+                }
+            }
+            
+            // Function to start the quiz
+            function startQuiz() {
+                quizStart.classList.add('d-none');
+                quizContent.classList.remove('d-none');
+                quizResults.classList.add('d-none');
+                
+                // Reset quiz state
+                currentQuestionIndex = 0;
+                userAnswers = new Array(quizQuestions.length).fill(null);
+                
+                // Start timer
+                quizStartTime = new Date();
+                if (quizTimer) {
+                    quizTimer.textContent = '00:00';
+                    quizTimerInterval = setInterval(updateQuizTimer, 1000);
+                }
+                
+                // Show first question
+                showQuestion(currentQuestionIndex);
+                updateNavButtons();
+            }
+            
+            // Function to display a question
+            function showQuestion(index) {
+                if (!questionContainer) return;
+                
+                const question = quizQuestions[index];
+                if (currentQuestionEl) currentQuestionEl.textContent = index + 1;
+                
+                // Create question HTML
+                let questionHTML = `
+                    <h4 class="mb-4">${question.question}</h4>
+                    <div class="options-container">
+                `;
+                
+                // Add options
+                question.options.forEach((option, i) => {
+                    const isChecked = userAnswers[index] === i ? 'checked' : '';
+                    questionHTML += `
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="quizOption" id="option${i}" value="${i}" ${isChecked}>
+                            <label class="form-check-label" for="option${i}">
+                                ${option}
+                            </label>
+                        </div>
+                    `;
+                });
+                
+                questionHTML += '</div>';
+                questionContainer.innerHTML = questionHTML;
+                
+                // Add event listeners to radio buttons
+                document.querySelectorAll('input[name="quizOption"]').forEach(radio => {
+                    radio.addEventListener('change', function() {
+                        userAnswers[currentQuestionIndex] = parseInt(this.value);
+                    });
+                });
+            }
+            
+            // Function to update navigation buttons
+            function updateNavButtons() {
+                if (prevQuestionBtn) {
+                    prevQuestionBtn.disabled = currentQuestionIndex === 0;
+                }
+                
+                if (nextQuestionBtn) {
+                    if (currentQuestionIndex === quizQuestions.length - 1) {
+                        nextQuestionBtn.innerHTML = 'Finish<i class="fas fa-check ms-2"></i>';
+                        nextQuestionBtn.classList.remove('btn-primary');
+                        nextQuestionBtn.classList.add('btn-success');
+                    } else {
+                        nextQuestionBtn.innerHTML = 'Next<i class="fas fa-arrow-right ms-2"></i>';
+                        nextQuestionBtn.classList.remove('btn-success');
+                        nextQuestionBtn.classList.add('btn-primary');
+                    }
+                }
+            }
+            
+            // Function to update quiz timer
+            function updateQuizTimer() {
+                if (!quizTimer) return;
+                
+                const now = new Date();
+                const elapsedTime = Math.floor((now - quizStartTime) / 1000);
+                const minutes = Math.floor(elapsedTime / 60);
+                const seconds = elapsedTime % 60;
+                
+                quizTimer.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            }
+            
+            // Function to finish the quiz
+            function finishQuiz() {
+                // Save last answer if selected
+                const selectedOption = document.querySelector('input[name="quizOption"]:checked');
+                if (selectedOption) {
+                    userAnswers[currentQuestionIndex] = parseInt(selectedOption.value);
+                }
+                
+                // Stop timer
+                clearInterval(quizTimerInterval);
+                
+                // Calculate score
+                let score = 0;
+                quizQuestions.forEach((question, index) => {
+                    if (userAnswers[index] === question.correctAnswer) {
+                        score++;
+                    }
+                });
+                
+                // Calculate percentage
+                const percentage = Math.round((score / quizQuestions.length) * 100);
+                
+                // Calculate time taken
+                const endTime = new Date();
+                const elapsedSeconds = Math.floor((endTime - quizStartTime) / 1000);
+                const minutes = Math.floor(elapsedSeconds / 60);
+                const seconds = elapsedSeconds % 60;
+                const timeString = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+                
+                // Update results
+                if (scorePercent) scorePercent.textContent = percentage;
+                if (correctAnswers) correctAnswers.textContent = score;
+                if (timeTaken) timeTaken.textContent = `Time taken: ${timeString}`;
+                
+                // Show results
+                quizContent.classList.add('d-none');
+                quizResults.classList.remove('d-none');
+            }
+            
+            // Function to reset quiz
+            function resetQuiz() {
+                currentQuestionIndex = 0;
+                userAnswers = [];
+                clearInterval(quizTimerInterval);
+            }
+            
+            // Theme Switcher
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = document.getElementById('themeIcon');
+            const htmlElement = document.documentElement;
+            
+            // Function to apply theme changes
+            function applyTheme(isLightTheme) {
+                if (isLightTheme) {
+                    htmlElement.classList.add('light-theme');
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                    themeToggle.classList.remove('btn-outline-light');
+                    themeToggle.classList.add('btn-outline-dark');
+                } else {
+                    htmlElement.classList.remove('light-theme');
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                    themeToggle.classList.remove('btn-outline-dark');
+                    themeToggle.classList.add('btn-outline-light');
+                }
+            }
+            
+            // Check for saved theme preference or use default dark theme
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                applyTheme(true);
+            }
+            
+            // Toggle theme on button click
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    const isLightTheme = !htmlElement.classList.contains('light-theme');
+                    applyTheme(isLightTheme);
+                    localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
+                });
+            }
+            
+            // Scroll to Top Button
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            
+            // Show/hide button based on scroll position
+            window.onscroll = function() {
+                if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                    scrollTopBtn.style.display = 'block';
+                } else {
+                    scrollTopBtn.style.display = 'none';
+                }
+            };
+            
+            // Scroll to top when button is clicked
+            if (scrollTopBtn) {
+                scrollTopBtn.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

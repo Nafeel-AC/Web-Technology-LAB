@@ -6,6 +6,7 @@
     <title>CodeCollab - Pricing Plans</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/animations.css">
     <!-- Original CSS -->
     <link rel="stylesheet" href="../Css Files/pricing.css">
     <!-- Additional CSS for FAQ cards -->
@@ -74,11 +75,13 @@
     </style>
 </head>
 <body>
+    <!-- Page transition overlay -->
+    <div class="page-transition"></div>
     <header>
         <div class="container">
-            <nav class="navbar navbar-expand-lg">
+            <nav class="navbar navbar-expand-lg sticky-top">
                 <div class="logo navbar-brand">CodeCollab</div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <button class="navbar-toggler navbar-toggler-animation" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -103,7 +106,7 @@
     </header>
 
     <main>
-        <section class="pricing-hero">
+        <section class="pricing-hero" class="animate-on-scroll" data-animation="fade-in">
             <div class="container">
                 <div class="row justify-content-center text-center">
                     <div class="col-md-10 col-lg-8">
@@ -124,7 +127,7 @@
             </div>
         </section>
 
-        <section class="pricing-plans">
+        <section class="pricing-plans" class="animate-on-scroll" data-animation="slide-up">
             <div class="container">
                 <div class="row pricing-cards">
                     <!-- Free Plan -->
@@ -257,7 +260,7 @@
             </div>
         </section>
 
-        <section class="feature-comparison">
+        <section class="feature-comparison" class="animate-on-scroll" data-animation="slide-right">
             <div class="container">
                 <h2 class="text-center mb-4">Detailed Feature Comparison</h2>
                 <div class="table-responsive">
@@ -362,7 +365,7 @@
             </div>
         </section>
 
-        <section class="testimonials">
+        <section class="testimonials" class="animate-on-scroll" data-animation="slide-left">
             <div class="container">
                 <h2 class="text-center mb-4">Trusted by Developers Worldwide</h2>
                 <div class="row testimonial-grid">
@@ -404,7 +407,7 @@
             </div>
         </section>
 
-        <section class="faq">
+        <section class="faq" class="animate-on-scroll" data-animation="zoom-in">
             <div class="container">
                 <h2 class="text-center mb-4">Frequently Asked Questions</h2>
                 <div class="row faq-grid">
@@ -448,7 +451,7 @@
             </div>
         </section>
 
-        <section class="cta-section">
+        <section class="cta-section" class="animate-on-scroll" data-animation="fade-in">
             <div class="container">
                 <div class="row justify-content-center text-center">
                     <div class="col-md-10 col-lg-8">
@@ -517,6 +520,7 @@
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
 
